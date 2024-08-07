@@ -1,0 +1,1120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="FakturaService" targetNamespace="http://innosolv.ch/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://innosolv.ch/webservices/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IFakturaService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://innosolv.ch/webservices/Imports">
+      <xsd:import schemaLocation="FakturaService_xsd_1.xsd" namespace="http://innosolv.ch/webservices/" />
+      <xsd:import schemaLocation="FakturaService_xsd_2.xsd" namespace="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+      <xsd:import schemaLocation="FakturaService_xsd_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IFakturaService_FindAutomPrepaymentGuthaben_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAutomPrepaymentGuthaben" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindAutomPrepaymentGuthaben_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAutomPrepaymentGuthabenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindAutomPrepaymentGuthaben_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:IsagWebServiceFaultDetails" xmlns:q1="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindEinmalrechnung_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindEinmalrechnung" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindEinmalrechnung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindEinmalrechnungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindEinmalrechnung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:IsagWebServiceFaultDetails" xmlns:q2="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetEinmalrechnung_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinmalrechnung" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetEinmalrechnung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinmalrechnungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetEinmalrechnung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:IsagWebServiceFaultDetails" xmlns:q3="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveEinmalrechnung_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEinmalrechnung" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveEinmalrechnung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEinmalrechnungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveEinmalrechnung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:IsagWebServiceFaultDetails" xmlns:q4="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindEinmalRechPos_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindEinmalRechPos" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindEinmalRechPos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindEinmalRechPosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindEinmalRechPos_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:IsagWebServiceFaultDetails" xmlns:q5="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetEinmalRechPos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinmalRechPos" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetEinmalRechPos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinmalRechPosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetEinmalRechPos_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:IsagWebServiceFaultDetails" xmlns:q6="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveEinmalRechPos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEinmalRechPos" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveEinmalRechPos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveEinmalRechPosResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveEinmalRechPos_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q7:IsagWebServiceFaultDetails" xmlns:q7="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindFaktVariante_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindFaktVariante" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindFaktVariante_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindFaktVarianteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindFaktVariante_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q8:IsagWebServiceFaultDetails" xmlns:q8="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindIndiv_Rechnungspos_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindIndiv_Rechnungspos" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindIndiv_Rechnungspos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindIndiv_RechnungsposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindIndiv_Rechnungspos_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q9:IsagWebServiceFaultDetails" xmlns:q9="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetIndiv_Rechnungspos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndiv_Rechnungspos" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetIndiv_Rechnungspos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetIndiv_RechnungsposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetIndiv_Rechnungspos_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q10:IsagWebServiceFaultDetails" xmlns:q10="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveIndiv_Rechnungspos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveIndiv_Rechnungspos" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveIndiv_Rechnungspos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveIndiv_RechnungsposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveIndiv_Rechnungspos_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q11:IsagWebServiceFaultDetails" xmlns:q11="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindKostenMengenResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindKostenMengenResult" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindKostenMengenResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindKostenMengenResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindKostenMengenResult_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q12:IsagWebServiceFaultDetails" xmlns:q12="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindKostenMengenFilterLabel_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindKostenMengenFilterLabel" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindKostenMengenFilterLabel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindKostenMengenFilterLabelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindKostenMengenFilterLabel_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q13:IsagWebServiceFaultDetails" xmlns:q13="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindKostenMengenFilterWerte_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindKostenMengenFilterWerte" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindKostenMengenFilterWerte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindKostenMengenFilterWerteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindKostenMengenFilterWerte_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q14:IsagWebServiceFaultDetails" xmlns:q14="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindLeistkat_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindLeistkat" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindLeistkat_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindLeistkatResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindLeistkat_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q15:IsagWebServiceFaultDetails" xmlns:q15="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPortalVersand_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPortalVersand" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPortalVersand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPortalVersandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPortalVersand_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q16:IsagWebServiceFaultDetails" xmlns:q16="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPortalRechnung_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPortalRechnung" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPortalRechnung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPortalRechnungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPortalRechnung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q17:IsagWebServiceFaultDetails" xmlns:q17="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_ExecuteUpdateStatusPortalVersand_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteUpdateStatusPortalVersand" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_ExecuteUpdateStatusPortalVersand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteUpdateStatusPortalVersandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_ExecuteUpdateStatusPortalVersand_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q18:IsagWebServiceFaultDetails" xmlns:q18="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerConfig_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPreisrechnerConfig" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerConfig_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPreisrechnerConfigResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerConfig_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q19:IsagWebServiceFaultDetails" xmlns:q19="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerTerminJahr_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPreisrechnerTerminJahr" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerTerminJahr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPreisrechnerTerminJahrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerTerminJahr_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q20:IsagWebServiceFaultDetails" xmlns:q20="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerParameter_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPreisrechnerParameter" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerParameter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPreisrechnerParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerParameter_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q21:IsagWebServiceFaultDetails" xmlns:q21="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerParameterTextvergleich_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindPreisrechnerParameterTextvergleich" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerParameterTextvergleich_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindPreisrechnerParameterTextvergleichResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindPreisrechnerParameterTextvergleich_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q22:IsagWebServiceFaultDetails" xmlns:q22="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindRechnung_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRechnung" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindRechnung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRechnungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindRechnung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q23:IsagWebServiceFaultDetails" xmlns:q23="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindRechnungsstatistik_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindRechnungsstatistik" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindRechnungsstatistik_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindRechnungsstatistikResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindRechnungsstatistik_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q24:IsagWebServiceFaultDetails" xmlns:q24="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetSammelrechnung_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSammelrechnung" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetSammelrechnung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSammelrechnungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetSammelrechnung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q25:IsagWebServiceFaultDetails" xmlns:q25="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindSammelrechzustell_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSammelrechzustell" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindSammelrechzustell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSammelrechzustellResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindSammelrechzustell_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q26:IsagWebServiceFaultDetails" xmlns:q26="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetSammelrechzustell_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSammelrechzustell" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetSammelrechzustell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSammelrechzustellResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetSammelrechzustell_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q27:IsagWebServiceFaultDetails" xmlns:q27="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveSammelrechzustell_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSammelrechzustell" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveSammelrechzustell_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSammelrechzustellResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveSammelrechzustell_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q28:IsagWebServiceFaultDetails" xmlns:q28="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_ExecuteTarifkonstrukt_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteTarifkonstrukt" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_ExecuteTarifkonstrukt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteTarifkonstruktResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_ExecuteTarifkonstrukt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q29:IsagWebServiceFaultDetails" xmlns:q29="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_ExecutePreisrechnerBaumstruktur_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecutePreisrechnerBaumstruktur" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_ExecutePreisrechnerBaumstruktur_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecutePreisrechnerBaumstrukturResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_ExecutePreisrechnerBaumstruktur_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q30:IsagWebServiceFaultDetails" xmlns:q30="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindTextbaustein_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindTextbaustein" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindTextbaustein_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTextbausteinResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindTextbaustein_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q31:IsagWebServiceFaultDetails" xmlns:q31="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragspartner_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVertragspartner" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragspartner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVertragspartnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragspartner_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q32:IsagWebServiceFaultDetails" xmlns:q32="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragsobjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVertragsobjekt" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragsobjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVertragsobjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragsobjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q33:IsagWebServiceFaultDetails" xmlns:q33="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindZustelladresseVertragspartner_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindZustelladresseVertragspartner" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindZustelladresseVertragspartner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindZustelladresseVertragspartnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindZustelladresseVertragspartner_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q34:IsagWebServiceFaultDetails" xmlns:q34="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragzusatz_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVertragzusatz" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragzusatz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVertragzusatzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragzusatz_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q35:IsagWebServiceFaultDetails" xmlns:q35="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetVertragzusatz_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVertragzusatz" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetVertragzusatz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVertragzusatzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetVertragzusatz_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q36:IsagWebServiceFaultDetails" xmlns:q36="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveVertragzusatz_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVertragzusatz" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveVertragzusatz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVertragzusatzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveVertragzusatz_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q37:IsagWebServiceFaultDetails" xmlns:q37="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragzusatzAkonto_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVertragzusatzAkonto" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragzusatzAkonto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVertragzusatzAkontoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindVertragzusatzAkonto_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q38:IsagWebServiceFaultDetails" xmlns:q38="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetVertragzusatzAkonto_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVertragzusatzAkonto" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetVertragzusatzAkonto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVertragzusatzAkontoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetVertragzusatzAkonto_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q39:IsagWebServiceFaultDetails" xmlns:q39="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveVertragzusatzAkonto_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVertragzusatzAkonto" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveVertragzusatzAkonto_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVertragzusatzAkontoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_SaveVertragzusatzAkonto_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q40:IsagWebServiceFaultDetails" xmlns:q40="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetVesr_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVesr" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetVesr_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVesrResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_GetVesr_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q41:IsagWebServiceFaultDetails" xmlns:q41="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindZahlstelle_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindZahlstelle" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindZahlstelle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindZahlstelleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IFakturaService_FindZahlstelle_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q42:IsagWebServiceFaultDetails" xmlns:q42="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:portType name="IFakturaService">
+    <wsdl:operation name="FindAutomPrepaymentGuthaben">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindAutomPrepaymentGuthaben" message="tns:IFakturaService_FindAutomPrepaymentGuthaben_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindAutomPrepaymentGuthabenResponse" message="tns:IFakturaService_FindAutomPrepaymentGuthaben_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindAutomPrepaymentGuthabenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindAutomPrepaymentGuthaben_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindEinmalrechnung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindEinmalrechnung" message="tns:IFakturaService_FindEinmalrechnung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindEinmalrechnungResponse" message="tns:IFakturaService_FindEinmalrechnung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindEinmalrechnungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindEinmalrechnung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEinmalrechnung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetEinmalrechnung" message="tns:IFakturaService_GetEinmalrechnung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetEinmalrechnungResponse" message="tns:IFakturaService_GetEinmalrechnung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetEinmalrechnungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_GetEinmalrechnung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEinmalrechnung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveEinmalrechnung" message="tns:IFakturaService_SaveEinmalrechnung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveEinmalrechnungResponse" message="tns:IFakturaService_SaveEinmalrechnung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveEinmalrechnungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_SaveEinmalrechnung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindEinmalRechPos">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindEinmalRechPos" message="tns:IFakturaService_FindEinmalRechPos_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindEinmalRechPosResponse" message="tns:IFakturaService_FindEinmalRechPos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindEinmalRechPosIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindEinmalRechPos_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEinmalRechPos">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetEinmalRechPos" message="tns:IFakturaService_GetEinmalRechPos_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetEinmalRechPosResponse" message="tns:IFakturaService_GetEinmalRechPos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetEinmalRechPosIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_GetEinmalRechPos_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveEinmalRechPos">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveEinmalRechPos" message="tns:IFakturaService_SaveEinmalRechPos_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveEinmalRechPosResponse" message="tns:IFakturaService_SaveEinmalRechPos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveEinmalRechPosIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_SaveEinmalRechPos_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindFaktVariante">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindFaktVariante" message="tns:IFakturaService_FindFaktVariante_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindFaktVarianteResponse" message="tns:IFakturaService_FindFaktVariante_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindFaktVarianteIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindFaktVariante_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindIndiv_Rechnungspos">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindIndiv_Rechnungspos" message="tns:IFakturaService_FindIndiv_Rechnungspos_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindIndiv_RechnungsposResponse" message="tns:IFakturaService_FindIndiv_Rechnungspos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindIndiv_RechnungsposIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindIndiv_Rechnungspos_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIndiv_Rechnungspos">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetIndiv_Rechnungspos" message="tns:IFakturaService_GetIndiv_Rechnungspos_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetIndiv_RechnungsposResponse" message="tns:IFakturaService_GetIndiv_Rechnungspos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetIndiv_RechnungsposIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_GetIndiv_Rechnungspos_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveIndiv_Rechnungspos">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveIndiv_Rechnungspos" message="tns:IFakturaService_SaveIndiv_Rechnungspos_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveIndiv_RechnungsposResponse" message="tns:IFakturaService_SaveIndiv_Rechnungspos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveIndiv_RechnungsposIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_SaveIndiv_Rechnungspos_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindKostenMengenResult">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenResult" message="tns:IFakturaService_FindKostenMengenResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenResultResponse" message="tns:IFakturaService_FindKostenMengenResult_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenResultIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindKostenMengenResult_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindKostenMengenFilterLabel">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenFilterLabel" message="tns:IFakturaService_FindKostenMengenFilterLabel_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenFilterLabelResponse" message="tns:IFakturaService_FindKostenMengenFilterLabel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenFilterLabelIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindKostenMengenFilterLabel_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindKostenMengenFilterWerte">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenFilterWerte" message="tns:IFakturaService_FindKostenMengenFilterWerte_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenFilterWerteResponse" message="tns:IFakturaService_FindKostenMengenFilterWerte_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenFilterWerteIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindKostenMengenFilterWerte_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindLeistkat">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindLeistkat" message="tns:IFakturaService_FindLeistkat_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindLeistkatResponse" message="tns:IFakturaService_FindLeistkat_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindLeistkatIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindLeistkat_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPortalVersand">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPortalVersand" message="tns:IFakturaService_FindPortalVersand_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPortalVersandResponse" message="tns:IFakturaService_FindPortalVersand_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPortalVersandIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindPortalVersand_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPortalRechnung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPortalRechnung" message="tns:IFakturaService_FindPortalRechnung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPortalRechnungResponse" message="tns:IFakturaService_FindPortalRechnung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPortalRechnungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindPortalRechnung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteUpdateStatusPortalVersand">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/ExecuteUpdateStatusPortalVersand" message="tns:IFakturaService_ExecuteUpdateStatusPortalVersand_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/ExecuteUpdateStatusPortalVersandResponse" message="tns:IFakturaService_ExecuteUpdateStatusPortalVersand_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/ExecuteUpdateStatusPortalVersandIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_ExecuteUpdateStatusPortalVersand_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPreisrechnerConfig">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerConfig" message="tns:IFakturaService_FindPreisrechnerConfig_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerConfigResponse" message="tns:IFakturaService_FindPreisrechnerConfig_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerConfigIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindPreisrechnerConfig_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPreisrechnerTerminJahr">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerTerminJahr" message="tns:IFakturaService_FindPreisrechnerTerminJahr_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerTerminJahrResponse" message="tns:IFakturaService_FindPreisrechnerTerminJahr_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerTerminJahrIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindPreisrechnerTerminJahr_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPreisrechnerParameter">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerParameter" message="tns:IFakturaService_FindPreisrechnerParameter_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerParameterResponse" message="tns:IFakturaService_FindPreisrechnerParameter_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerParameterIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindPreisrechnerParameter_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindPreisrechnerParameterTextvergleich">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerParameterTextvergleich" message="tns:IFakturaService_FindPreisrechnerParameterTextvergleich_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerParameterTextvergleichResponse" message="tns:IFakturaService_FindPreisrechnerParameterTextvergleich_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerParameterTextvergleichIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindPreisrechnerParameterTextvergleich_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRechnung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindRechnung" message="tns:IFakturaService_FindRechnung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindRechnungResponse" message="tns:IFakturaService_FindRechnung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindRechnungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindRechnung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindRechnungsstatistik">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindRechnungsstatistik" message="tns:IFakturaService_FindRechnungsstatistik_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindRechnungsstatistikResponse" message="tns:IFakturaService_FindRechnungsstatistik_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindRechnungsstatistikIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindRechnungsstatistik_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSammelrechnung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetSammelrechnung" message="tns:IFakturaService_GetSammelrechnung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetSammelrechnungResponse" message="tns:IFakturaService_GetSammelrechnung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetSammelrechnungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_GetSammelrechnung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSammelrechzustell">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindSammelrechzustell" message="tns:IFakturaService_FindSammelrechzustell_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindSammelrechzustellResponse" message="tns:IFakturaService_FindSammelrechzustell_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindSammelrechzustellIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindSammelrechzustell_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSammelrechzustell">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetSammelrechzustell" message="tns:IFakturaService_GetSammelrechzustell_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetSammelrechzustellResponse" message="tns:IFakturaService_GetSammelrechzustell_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetSammelrechzustellIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_GetSammelrechzustell_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSammelrechzustell">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveSammelrechzustell" message="tns:IFakturaService_SaveSammelrechzustell_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveSammelrechzustellResponse" message="tns:IFakturaService_SaveSammelrechzustell_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveSammelrechzustellIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_SaveSammelrechzustell_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteTarifkonstrukt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/ExecuteTarifkonstrukt" message="tns:IFakturaService_ExecuteTarifkonstrukt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/ExecuteTarifkonstruktResponse" message="tns:IFakturaService_ExecuteTarifkonstrukt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/ExecuteTarifkonstruktIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_ExecuteTarifkonstrukt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePreisrechnerBaumstruktur">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/ExecutePreisrechnerBaumstruktur" message="tns:IFakturaService_ExecutePreisrechnerBaumstruktur_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/ExecutePreisrechnerBaumstrukturResponse" message="tns:IFakturaService_ExecutePreisrechnerBaumstruktur_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/ExecutePreisrechnerBaumstrukturIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_ExecutePreisrechnerBaumstruktur_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindTextbaustein">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindTextbaustein" message="tns:IFakturaService_FindTextbaustein_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindTextbausteinResponse" message="tns:IFakturaService_FindTextbaustein_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindTextbausteinIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindTextbaustein_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVertragspartner">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragspartner" message="tns:IFakturaService_FindVertragspartner_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragspartnerResponse" message="tns:IFakturaService_FindVertragspartner_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragspartnerIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindVertragspartner_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVertragsobjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragsobjekt" message="tns:IFakturaService_FindVertragsobjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragsobjektResponse" message="tns:IFakturaService_FindVertragsobjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragsobjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindVertragsobjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindZustelladresseVertragspartner">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindZustelladresseVertragspartner" message="tns:IFakturaService_FindZustelladresseVertragspartner_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindZustelladresseVertragspartnerResponse" message="tns:IFakturaService_FindZustelladresseVertragspartner_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindZustelladresseVertragspartnerIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindZustelladresseVertragspartner_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVertragzusatz">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragzusatz" message="tns:IFakturaService_FindVertragzusatz_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragzusatzResponse" message="tns:IFakturaService_FindVertragzusatz_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragzusatzIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindVertragzusatz_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVertragzusatz">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetVertragzusatz" message="tns:IFakturaService_GetVertragzusatz_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetVertragzusatzResponse" message="tns:IFakturaService_GetVertragzusatz_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetVertragzusatzIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_GetVertragzusatz_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVertragzusatz">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveVertragzusatz" message="tns:IFakturaService_SaveVertragzusatz_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveVertragzusatzResponse" message="tns:IFakturaService_SaveVertragzusatz_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveVertragzusatzIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_SaveVertragzusatz_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVertragzusatzAkonto">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragzusatzAkonto" message="tns:IFakturaService_FindVertragzusatzAkonto_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragzusatzAkontoResponse" message="tns:IFakturaService_FindVertragzusatzAkonto_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindVertragzusatzAkontoIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindVertragzusatzAkonto_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVertragzusatzAkonto">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetVertragzusatzAkonto" message="tns:IFakturaService_GetVertragzusatzAkonto_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetVertragzusatzAkontoResponse" message="tns:IFakturaService_GetVertragzusatzAkonto_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetVertragzusatzAkontoIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_GetVertragzusatzAkonto_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVertragzusatzAkonto">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveVertragzusatzAkonto" message="tns:IFakturaService_SaveVertragzusatzAkonto_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveVertragzusatzAkontoResponse" message="tns:IFakturaService_SaveVertragzusatzAkonto_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/SaveVertragzusatzAkontoIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_SaveVertragzusatzAkonto_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVesr">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetVesr" message="tns:IFakturaService_GetVesr_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetVesrResponse" message="tns:IFakturaService_GetVesr_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/GetVesrIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_GetVesr_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindZahlstelle">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindZahlstelle" message="tns:IFakturaService_FindZahlstelle_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindZahlstelleResponse" message="tns:IFakturaService_FindZahlstelle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IFakturaService/FindZahlstelleIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IFakturaService_FindZahlstelle_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IFakturaService" type="tns:IFakturaService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IFakturaService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindAutomPrepaymentGuthaben">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindAutomPrepaymentGuthaben" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindEinmalrechnung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindEinmalrechnung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEinmalrechnung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/GetEinmalrechnung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEinmalrechnung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/SaveEinmalrechnung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindEinmalRechPos">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindEinmalRechPos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEinmalRechPos">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/GetEinmalRechPos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveEinmalRechPos">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/SaveEinmalRechPos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindFaktVariante">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindFaktVariante" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindIndiv_Rechnungspos">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindIndiv_Rechnungspos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetIndiv_Rechnungspos">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/GetIndiv_Rechnungspos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveIndiv_Rechnungspos">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/SaveIndiv_Rechnungspos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindKostenMengenResult">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindKostenMengenFilterLabel">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenFilterLabel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindKostenMengenFilterWerte">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindKostenMengenFilterWerte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindLeistkat">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindLeistkat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindPortalVersand">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindPortalVersand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindPortalRechnung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindPortalRechnung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteUpdateStatusPortalVersand">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/ExecuteUpdateStatusPortalVersand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindPreisrechnerConfig">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerConfig" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindPreisrechnerTerminJahr">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerTerminJahr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindPreisrechnerParameter">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindPreisrechnerParameterTextvergleich">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindPreisrechnerParameterTextvergleich" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindRechnung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindRechnung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindRechnungsstatistik">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindRechnungsstatistik" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSammelrechnung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/GetSammelrechnung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindSammelrechzustell">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindSammelrechzustell" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSammelrechzustell">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/GetSammelrechzustell" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSammelrechzustell">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/SaveSammelrechzustell" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteTarifkonstrukt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/ExecuteTarifkonstrukt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePreisrechnerBaumstruktur">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/ExecutePreisrechnerBaumstruktur" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindTextbaustein">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindTextbaustein" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVertragspartner">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindVertragspartner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVertragsobjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindVertragsobjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindZustelladresseVertragspartner">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindZustelladresseVertragspartner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVertragzusatz">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindVertragzusatz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVertragzusatz">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/GetVertragzusatz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVertragzusatz">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/SaveVertragzusatz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVertragzusatzAkonto">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindVertragzusatzAkonto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVertragzusatzAkonto">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/GetVertragzusatzAkonto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVertragzusatzAkonto">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/SaveVertragzusatzAkonto" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVesr">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/GetVesr" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindZahlstelle">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IFakturaService/FindZahlstelle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FakturaService">
+    <wsdl:port name="BasicHttpBinding_IFakturaService" binding="tns:BasicHttpBinding_IFakturaService">
+      <soap:address location="http://localhost:8092/FakturaService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

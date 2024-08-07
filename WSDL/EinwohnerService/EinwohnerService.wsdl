@@ -1,0 +1,522 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="EinwohnerService" targetNamespace="http://innosolv.ch/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://innosolv.ch/webservices/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IEinwohnerService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://innosolv.ch/webservices/Imports">
+      <xsd:import schemaLocation="EinwohnerService_xsd_1.xsd" namespace="http://innosolv.ch/webservices/" />
+      <xsd:import schemaLocation="EinwohnerService_xsd_2.xsd" namespace="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+      <xsd:import schemaLocation="EinwohnerService_xsd_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEinwohnerService_FindAusweistypen_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAusweistypen" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindAusweistypen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAusweistypenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindAusweistypen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:IsagWebServiceFaultDetails" xmlns:q1="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindAufenthaltsarten_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAufenthaltsarten" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindAufenthaltsarten_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAufenthaltsartenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindAufenthaltsarten_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:IsagWebServiceFaultDetails" xmlns:q2="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_ExecuteeBescheinigung_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteeBescheinigung" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_ExecuteeBescheinigung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteeBescheinigungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_ExecuteeBescheinigung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:IsagWebServiceFaultDetails" xmlns:q3="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindEinwohner_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindEinwohner" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindEinwohner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindEinwohnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindEinwohner_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:IsagWebServiceFaultDetails" xmlns:q4="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetEinwohnerName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinwohnerName" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetEinwohnerName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinwohnerNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetEinwohnerName_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:IsagWebServiceFaultDetails" xmlns:q5="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindHeimatort_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindHeimatort" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindHeimatort_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindHeimatortResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindHeimatort_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:IsagWebServiceFaultDetails" xmlns:q6="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindEltern_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindEltern" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindEltern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindElternResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindEltern_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q7:IsagWebServiceFaultDetails" xmlns:q7="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetPartner_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartner" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetPartner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPartnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetPartner_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q8:IsagWebServiceFaultDetails" xmlns:q8="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetEinwohnerAnschrift_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinwohnerAnschrift" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetEinwohnerAnschrift_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinwohnerAnschriftResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetEinwohnerAnschrift_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q9:IsagWebServiceFaultDetails" xmlns:q9="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindBeziehungen_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindBeziehungen" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindBeziehungen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindBeziehungenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindBeziehungen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q10:IsagWebServiceFaultDetails" xmlns:q10="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetBeziehung_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBeziehung" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetBeziehung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBeziehungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetBeziehung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q11:IsagWebServiceFaultDetails" xmlns:q11="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetEinwohner_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinwohner" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetEinwohner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinwohnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetEinwohner_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q12:IsagWebServiceFaultDetails" xmlns:q12="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetZustelladresse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZustelladresse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetZustelladresse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZustelladresseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetZustelladresse_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q13:IsagWebServiceFaultDetails" xmlns:q13="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetZuzug_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZuzug" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetZuzug_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZuzugResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetZuzug_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q14:IsagWebServiceFaultDetails" xmlns:q14="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetWegzug_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWegzug" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetWegzug_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWegzugResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetWegzug_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q15:IsagWebServiceFaultDetails" xmlns:q15="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindKinder_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindKinder" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindKinder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindKinderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindKinder_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q16:IsagWebServiceFaultDetails" xmlns:q16="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindArbeitgeber_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindArbeitgeber" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindArbeitgeber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindArbeitgeberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_FindArbeitgeber_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q17:IsagWebServiceFaultDetails" xmlns:q17="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetMassnahme_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMassnahme" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetMassnahme_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMassnahmeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetMassnahme_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q18:IsagWebServiceFaultDetails" xmlns:q18="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetUnternehmen_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnternehmen" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetUnternehmen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUnternehmenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwohnerService_GetUnternehmen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q19:IsagWebServiceFaultDetails" xmlns:q19="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:portType name="IEinwohnerService">
+    <wsdl:operation name="FindAusweistypen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindAusweistypen" message="tns:IEinwohnerService_FindAusweistypen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindAusweistypenResponse" message="tns:IEinwohnerService_FindAusweistypen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindAusweistypenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_FindAusweistypen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAufenthaltsarten">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindAufenthaltsarten" message="tns:IEinwohnerService_FindAufenthaltsarten_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindAufenthaltsartenResponse" message="tns:IEinwohnerService_FindAufenthaltsarten_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindAufenthaltsartenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_FindAufenthaltsarten_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteeBescheinigung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/ExecuteeBescheinigung" message="tns:IEinwohnerService_ExecuteeBescheinigung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/ExecuteeBescheinigungResponse" message="tns:IEinwohnerService_ExecuteeBescheinigung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/ExecuteeBescheinigungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_ExecuteeBescheinigung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindEinwohner">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindEinwohner" message="tns:IEinwohnerService_FindEinwohner_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindEinwohnerResponse" message="tns:IEinwohnerService_FindEinwohner_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindEinwohnerIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_FindEinwohner_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEinwohnerName">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohnerName" message="tns:IEinwohnerService_GetEinwohnerName_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohnerNameResponse" message="tns:IEinwohnerService_GetEinwohnerName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohnerNameIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_GetEinwohnerName_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindHeimatort">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindHeimatort" message="tns:IEinwohnerService_FindHeimatort_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindHeimatortResponse" message="tns:IEinwohnerService_FindHeimatort_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindHeimatortIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_FindHeimatort_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindEltern">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindEltern" message="tns:IEinwohnerService_FindEltern_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindElternResponse" message="tns:IEinwohnerService_FindEltern_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindElternIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_FindEltern_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPartner">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetPartner" message="tns:IEinwohnerService_GetPartner_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetPartnerResponse" message="tns:IEinwohnerService_GetPartner_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetPartnerIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_GetPartner_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEinwohnerAnschrift">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohnerAnschrift" message="tns:IEinwohnerService_GetEinwohnerAnschrift_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohnerAnschriftResponse" message="tns:IEinwohnerService_GetEinwohnerAnschrift_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohnerAnschriftIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_GetEinwohnerAnschrift_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindBeziehungen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindBeziehungen" message="tns:IEinwohnerService_FindBeziehungen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindBeziehungenResponse" message="tns:IEinwohnerService_FindBeziehungen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindBeziehungenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_FindBeziehungen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBeziehung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetBeziehung" message="tns:IEinwohnerService_GetBeziehung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetBeziehungResponse" message="tns:IEinwohnerService_GetBeziehung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetBeziehungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_GetBeziehung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEinwohner">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohner" message="tns:IEinwohnerService_GetEinwohner_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohnerResponse" message="tns:IEinwohnerService_GetEinwohner_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohnerIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_GetEinwohner_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZustelladresse">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetZustelladresse" message="tns:IEinwohnerService_GetZustelladresse_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetZustelladresseResponse" message="tns:IEinwohnerService_GetZustelladresse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetZustelladresseIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_GetZustelladresse_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZuzug">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetZuzug" message="tns:IEinwohnerService_GetZuzug_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetZuzugResponse" message="tns:IEinwohnerService_GetZuzug_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetZuzugIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_GetZuzug_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWegzug">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetWegzug" message="tns:IEinwohnerService_GetWegzug_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetWegzugResponse" message="tns:IEinwohnerService_GetWegzug_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetWegzugIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_GetWegzug_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindKinder">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindKinder" message="tns:IEinwohnerService_FindKinder_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindKinderResponse" message="tns:IEinwohnerService_FindKinder_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindKinderIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_FindKinder_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindArbeitgeber">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindArbeitgeber" message="tns:IEinwohnerService_FindArbeitgeber_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindArbeitgeberResponse" message="tns:IEinwohnerService_FindArbeitgeber_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/FindArbeitgeberIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_FindArbeitgeber_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMassnahme">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetMassnahme" message="tns:IEinwohnerService_GetMassnahme_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetMassnahmeResponse" message="tns:IEinwohnerService_GetMassnahme_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetMassnahmeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_GetMassnahme_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUnternehmen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetUnternehmen" message="tns:IEinwohnerService_GetUnternehmen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetUnternehmenResponse" message="tns:IEinwohnerService_GetUnternehmen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwohnerService/GetUnternehmenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwohnerService_GetUnternehmen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEinwohnerService" type="tns:IEinwohnerService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IEinwohnerService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindAusweistypen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/FindAusweistypen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAufenthaltsarten">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/FindAufenthaltsarten" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteeBescheinigung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/ExecuteeBescheinigung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindEinwohner">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/FindEinwohner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEinwohnerName">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohnerName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindHeimatort">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/FindHeimatort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindEltern">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/FindEltern" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetPartner">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/GetPartner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEinwohnerAnschrift">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohnerAnschrift" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindBeziehungen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/FindBeziehungen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeziehung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/GetBeziehung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEinwohner">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/GetEinwohner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetZustelladresse">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/GetZustelladresse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetZuzug">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/GetZuzug" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWegzug">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/GetWegzug" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindKinder">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/FindKinder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindArbeitgeber">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/FindArbeitgeber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMassnahme">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/GetMassnahme" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetUnternehmen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwohnerService/GetUnternehmen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EinwohnerService">
+    <wsdl:port name="BasicHttpBinding_IEinwohnerService" binding="tns:BasicHttpBinding_IEinwohnerService">
+      <soap:address location="http://localhost:8092/EinwohnerService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

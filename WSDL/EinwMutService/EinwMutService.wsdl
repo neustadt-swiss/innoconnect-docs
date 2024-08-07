@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="EinwMutService" targetNamespace="http://innosolv.ch/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://innosolv.ch/webservices/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IEinwMutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://innosolv.ch/webservices/Imports">
+      <xsd:import schemaLocation="EinwMutService_xsd_1.xsd" namespace="http://innosolv.ch/webservices/" />
+      <xsd:import schemaLocation="EinwMutService_xsd_2.xsd" namespace="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+      <xsd:import schemaLocation="EinwMutService_xsd_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IEinwMutService_FindMutationpos_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMutationpos" />
+  </wsdl:message>
+  <wsdl:message name="IEinwMutService_FindMutationpos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMutationposResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEinwMutService_FindMutationpos_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:IsagWebServiceFaultDetails" xmlns:q1="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:portType name="IEinwMutService">
+    <wsdl:operation name="FindMutationpos">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IEinwMutService/FindMutationpos" message="tns:IEinwMutService_FindMutationpos_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IEinwMutService/FindMutationposResponse" message="tns:IEinwMutService_FindMutationpos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IEinwMutService/FindMutationposIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IEinwMutService_FindMutationpos_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IEinwMutService" type="tns:IEinwMutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IEinwMutService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindMutationpos">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IEinwMutService/FindMutationpos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EinwMutService">
+    <wsdl:port name="BasicHttpBinding_IEinwMutService" binding="tns:BasicHttpBinding_IEinwMutService">
+      <soap:address location="http://localhost:8092/EinwMutService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

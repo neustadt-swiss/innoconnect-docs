@@ -1,0 +1,5253 @@
+﻿<!doctype html>
+<html>
+<head>
+
+
+<title>ObjektService</title>
+<link href="Documentationstyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<a href="index.html">Zum Index</a>
+<h1>ObjektService</h1>
+<div class="index">
+<ul>
+        <li><a href="#FindEigentum">FindEigentum</a></li>
+            <li><a href="#GetGebaeude">GetGebaeude</a></li>
+            <li><a href="#SaveGebaeude">SaveGebaeude</a></li>
+            <li><a href="#FindGebiet">FindGebiet</a></li>
+            <li><a href="#GetGebiet">GetGebiet</a></li>
+            <li><a href="#GetGrundstueck">GetGrundstueck</a></li>
+            <li><a href="#FindObjekt">FindObjekt</a></li>
+            <li><a href="#FindObjektEigentuemerVerwaltung">FindObjektEigentuemerVerwaltung</a></li>
+            <li><a href="#FindObjektDetails">FindObjektDetails</a></li>
+            <li><a href="#FindObjektHinweis">FindObjektHinweis</a></li>
+            <li><a href="#FindObjektPerson">FindObjektPerson</a></li>
+            <li><a href="#FindObjektschluessel">FindObjektschluessel</a></li>
+            <li><a href="#FindGebaeudeStrukturExtern">FindGebaeudeStrukturExtern</a></li>
+            <li><a href="#GetObjektzuord">GetObjektzuord</a></li>
+            <li><a href="#GetWohnung">GetWohnung</a></li>
+    </ul>
+</div>
+<div class="details">
+        <h2 id="FindEigentum">FindEigentum</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Subjekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Adresse
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Zustelladresse
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Ansprechpartner
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Anteil
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EigentumsArt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Eigentum.EigentumsArt
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigVon
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigBis
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Kataster
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GemeinschaftEigentumsArt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Eigentum.EigentumsArt
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GemeinschaftAnteil
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GemeinschaftArt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        EigentumGemeinschaft.Art
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GemeinschaftBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="GetGebaeude">GetGebaeude</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        HoeheUeberMeer
+                    </td>
+                    <td>
+                        
+                        Int16                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EKoordinate
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        NKoordinate
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Gebaeudeart
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Gebaeude.GebaeudeArt
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Kategorie
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Gebaeude.Kategorie
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Status
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Gebaeude.Status
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Energiebezugsflaeche
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EidgGebId
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Volumen
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        BruttoFlaeche
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Koordinatenherkunft
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Gebaeude.Koordinatenherkunft
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EnergietraegerWarmwasser
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Gebaeude.Energietraeger
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Warmwasserversorgung
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        System.JaNein
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EnergietraegerHeizung
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Gebaeude.Energietraeger
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Heizungsart
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Gebaeude.Heizungsart
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        AssekuranzNr
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        KantGebId
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GebaeudeArtBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        KategorieBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        StatusBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        HeizungsartBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EnergietraegerHeizungBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        KoordinatenherkunftBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EnergietraegerWarmwasserBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Baujahr
+                    </td>
+                    <td>
+                        
+                        Int16                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Bauperiode
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Gebaeude.Bauperiode
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="SaveGebaeude">SaveGebaeude</h2>
+        <h3>Input</h3> Siehe Outputfelder unter <a href="#GetGebaeude">GetGebaeude</a> und im WSDL: <b>SaveGebaeudeRequest</b> 
+        <table style="visibility:hidden">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		Siehe Inputfelder und im WSDL: <b>SaveGebaeudeResponse</b>. Plus die Felder: <b>SuccessfullyCompleted</b> (bool), <b>ErrorMessage</b> (string) 
+        <table style="visibility:hidden" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                        </tbody>
+        </table>                
+            <h2 id="FindGebiet">FindGebiet</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Standort
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Gebiet
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Bezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GebietTyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Gebiet.GebietTyp
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Kuerzel
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="GetGebiet">GetGebiet</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Gebiet
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Gebiet
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Bezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GebietTyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Gebiet.GebietTyp
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Kuerzel
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigVon
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigBis
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="GetGrundstueck">GetGrundstueck</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektTyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Objekt.ObjektTyp
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GrundstueckArt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Grundstueck.GrundstueckArt
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        KatasterBereich
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        KatasterNr
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        KatasterNrZusatz
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GesamtFlaeche
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Status
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Grundstueck.Status
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EGRID
+                    </td>
+                    <td>
+                        
+                        Int64                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="FindObjekt">FindObjekt</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        StrasseLage
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        HausNr
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        HausNrZusatz
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        PLZ
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Ortsname
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Bezeichnung
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTyp
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Objekt.ObjektTyp
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        KatasterBereich
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        KatasterNr
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        KatasterNrZusatz
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        EGRID
+                    </td>
+                    <td>
+                        Int64
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        AssekuranzNr
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        EidgGebId
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        KantGebId
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        EigentumID_Subjekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Param
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        EigentumAktivInaktiv
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektPersonID_Subjekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektpersonRolle
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektPersonAktivInaktiv
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektTyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Objekt.ObjektTyp
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektTyp_Bez
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Eigentuemer
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Bezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigVon
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigBis
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Ortsname
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Strassenname
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        HausNr
+                    </td>
+                    <td>
+                        
+                        Int16                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        HausNrZusatz
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Objektschluessel
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Strasse
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Ort
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Objektstandort
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Postleitzahl
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Objektperson_Name
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Objektperson_ID_Subjekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Objektperson_GueltigVon
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Objektperson_GueltigBis
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Standort
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Standort
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektArt
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EGID_EWID
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="FindObjektEigentuemerVerwaltung">FindObjektEigentuemerVerwaltung</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Id_Objekt vom Objekt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        StrasseLage
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Suchbegriff für die Strasse oder der Lage (Standort)
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        HausNr
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        HausNr vom Objekt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        HausNrZusatz
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        HausNrZusatz vom Objekt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Bezeichnung
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Bezeichnung vom Objekt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTyp
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        ObjektTyp vom Objekt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        PLZ
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        PLZ vom Objekt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Ortsname
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Ortsname vom Objekt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypAnschluss
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Anschluss wird berücksichtigt 
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypGeraetestandort
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Gerätestandort wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypBezuegeranlage
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Bezügeranlage wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypGewerbeGeschaeft
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Gerwebe/Geschaeft wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypRaum
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Raum wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypWohnung
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Wohnung wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypGebaeudeteil
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Gebäudeteil wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypGebaeude
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Gebäude wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypTechnischeParzelle
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Technische Parzelle wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypBergwerk
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Bergwerk wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypMiteigentumsanteil
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Miteigentumsanteil wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypStockwerkeigentum
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Stockwerkeigentum wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypUnselbstaendigesBaurecht
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp unselbständiges Bau-recht wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypSelbstaendigesBaurecht
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp selbständiges Bau-recht wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ObjektTypLiegenschaft
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Objekte mit dem Objekttyp Liegenschaft wird berücksichtigt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ResultGebaeudeEingang
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1 = Bei Objekten mit dem Objekttyp Gebäude oder Gebäudeteil wird nach untergeordnete Objekte mit unterschiedlichen Standorte gesucht. Das Objekt (Gebäude, Gebäudeteil) wird dann pro Standort bzw. Gebäudeeingang zurückgeliefert. ID_Objekt bleibt gleich und ID_Standort ist vom jeweiligen Gebäudeeingang. 
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        ID vom Objekt
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektTyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Objekt.Objekttyp
+                    </td>
+                    <td>
+                        Objekttyp vom Objekt (Hardcode)
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Standort
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        ID vom Standort
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Standort
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Adresse vom Standort
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektArt
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Art vom Objekt (Grundstückart, Gebäudeart, Raumart, Gewerbeart, AnschlussEnergieart, Bezügeranlageart, GerätestandortobjektArt)
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Strassenname
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Strassenname vom Standort
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        HausNr
+                    </td>
+                    <td>
+                        
+                        Int16                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        HausNr vom Standort
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        HausNrZusatz
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        HausNrZusatz vom Standort
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Postleitzahl
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Postleitzahl vom Standort
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Ortsname
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Ortsname vom Standort
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        AssekuranzNr
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        AssekuranzNr vom Gebäude
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Objektbezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Bezeichnung vom Objekt
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Lage
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Lage vom Standort
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        OrtsnamePost
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Name der Ortschaft gemäss Ortschaftenverzeichnis der Post
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Gemeindename
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Gemeindename vom Standort
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Nation
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        System.Nation
+                    </td>
+                    <td>
+                        Nation vom Standort (Hardcode)
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        KatasterNr
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Katasterbereich, Kataster-Nr. und Kataster-Nr. Zusatz der Liegenschaft
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Subjekt_Eigentuemer
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        ID_Subjekt vom Objekt-Eigentümer. Der Eigentümer wird von einem übergeordneten Objekt mit dem Objekttyp (10-19) ermittelt. Sind mehrere gültige Eigentümer vorhanden, wird der Ansprechpartner angezeigt.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Subjekt_Verwaltung
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        ID_Subjekt der Ansprechperson-Objekt mit der Rolle Verwaltung. Die übergeordneten Objekte werden auch berücksichtig. Sind mehrere Verwaltung vorhanden, wird die erste Verwaltung selektriert.
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="FindObjektDetails">FindObjektDetails</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        StrasseLage
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        HausNr
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        PLZ
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Ortsname
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektTyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Objekt.ObjektTyp
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektTypBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Subjekt_Eigentuemer
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Eigentuemer
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektNr
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        AnzahlRaeume
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Bezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Geschoss
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Strassenname
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        HausNr
+                    </td>
+                    <td>
+                        
+                        Int16                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        HausNrZusatz
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Lage
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Postleitzahl
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Ortsname
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Standort
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        WohnungsNr
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Nation
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Geschosszusatz
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="FindObjektHinweis">FindObjektHinweis</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_ObjektHinweis
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Vermerk
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        VorausInfo
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Datum
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="FindObjektPerson">FindObjektPerson</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ID_Subjekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Subjekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Rolle
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Objektperson.Rolle
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Adresse
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigVon
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigBis
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="FindObjektschluessel">FindObjektschluessel</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        SchluesselNr
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Aufbewahrungsort
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Objektschluessel.Aufbewahrungsort
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Abgeber
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Beschreibung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Objektstandort
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                         Aus Kompatibilitätsgründen ist das Feld noch vorhanden. Es werden keine Daten geliefert.
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="FindGebaeudeStrukturExtern">FindGebaeudeStrukturExtern</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ReferenzId
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Referenztyp
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        2: Objekt<br>77: Gebäude<br>160: Gebäudeteil<br>94: Wohnung<br>161: Raum<br>162: Gewerbe/Geschäft<br>95: Anschluss<br>163: Bezügeranlage<br>112: Anlage
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        IncludeChildren
+                    </td>
+                    <td>
+                        Boolean
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Ist dieser Parameter gesetzt, dann wird die gesamte Gebäudestruktur des Objektes resp. der Anlage ermittelt. Dabei werden nur die in den Mutationswarteschlange-Einstellungen definierten Objekttypen resp. Anlagetypen ermittelt.
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        Referenztyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ReferenzId
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ReferenzTyp_Parent
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ReferenzID_Parent
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Objektbezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektTyp
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Anlageart
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigVon
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigBis
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektTyp_Cd
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        AnlageArt_Cd
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Energieart_Cd
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EnergieArt
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="GetObjektzuord">GetObjektzuord</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        UeberUnter
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        1=Untergeordnete Objekte (Default), 2=Übergeordnete Objekte
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ObjektTyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigVon
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GueltigBis
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="GetWohnung">GetWohnung</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Objekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Geschoss
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Geschosszusatz
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        WohnungsNr
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        WohnungsNrAdr
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Laenge
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Breite
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Hoehe
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Kocheinrichtung
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Status
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Baujahr
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EidgGebId
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        EidgWhgId
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Nutzung
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Haushaltsart
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        NettoFlaeche
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        BruttoFlaeche
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Raumeinheiten
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Volumen
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        AnzahlRaeume
+                    </td>
+                    <td>
+                        
+                        Decimal                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GeschossBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        GeschossZusatzBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        KocheinrichtungBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        StatusBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        NutzungBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        HaushaltsartBezeichnung
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+    </div> 
+<br />
+(c) innosolv AG, Erstelldatum: 21.03.2023  
+</body>
+</html>

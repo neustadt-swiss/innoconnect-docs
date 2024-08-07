@@ -1,0 +1,1347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="HelperService" targetNamespace="http://innosolv.ch/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://innosolv.ch/webservices/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IHelperService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://innosolv.ch/webservices/Imports">
+      <xsd:import schemaLocation="HelperService_xsd_1.xsd" namespace="http://innosolv.ch/webservices/" />
+      <xsd:import schemaLocation="HelperService_xsd_2.xsd" namespace="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+      <xsd:import schemaLocation="HelperService_xsd_3.xsd" namespace="Subjekt_PQ" />
+      <xsd:import schemaLocation="HelperService_xsd_4.xsd" namespace="Standort_PQ" />
+      <xsd:import schemaLocation="HelperService_xsd_5.xsd" namespace="Kommunikation_PQ" />
+      <xsd:import schemaLocation="HelperService_xsd_6.xsd" namespace="Grundstueck_PQ" />
+      <xsd:import schemaLocation="HelperService_xsd_7.xsd" namespace="Gebaeude_PQ" />
+      <xsd:import schemaLocation="HelperService_xsd_8.xsd" namespace="Wohnung_PQ" />
+      <xsd:import schemaLocation="HelperService_xsd_9.xsd" namespace="Subjektzuord_PQ" />
+      <xsd:import schemaLocation="HelperService_xsd_10.xsd" namespace="Gruppenzuord_PQ" />
+      <xsd:import schemaLocation="HelperService_xsd_11.xsd" namespace="Adresse_PQ" />
+      <xsd:import schemaLocation="HelperService_xsd_12.xsd" namespace="Dokument_PQ" />
+      <xsd:import schemaLocation="HelperService_xsd_13.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="HelperService_xsd_14.xsd" namespace="http://schemas.microsoft.com/Message" />
+      <xsd:import schemaLocation="HelperService_xsd_15.xsd" namespace="http://www.ech.ch/xmlns/eCH-0173/1" />
+      <xsd:import schemaLocation="HelperService_xsd_16.xsd" namespace="http://www.ech.ch/xmlns/eCH-0097-f/2" />
+      <xsd:import schemaLocation="HelperService_xsd_17.xsd" namespace="http://www.ech.ch/xmlns/eCH-0044-f/3" />
+      <xsd:import schemaLocation="HelperService_xsd_18.xsd" namespace="http://www.ech.ch/xmlns/eCH-0010/5" />
+      <xsd:import schemaLocation="HelperService_xsd_19.xsd" namespace="http://www.ech.ch/xmlns/eCH-0007/5" />
+      <xsd:import schemaLocation="HelperService_xsd_20.xsd" namespace="http://www.ech.ch/xmlns/eCH-0021-f/6" />
+      <xsd:import schemaLocation="HelperService_xsd_21.xsd" namespace="http://www.ech.ch/xmlns/eCH-0011-f/7" />
+      <xsd:import schemaLocation="HelperService_xsd_22.xsd" namespace="http://www.ech.ch/xmlns/eCH-0008-f/3" />
+      <xsd:import schemaLocation="HelperService_xsd_23.xsd" namespace="http://www.ech.ch/xmlns/eCH-0007-f/5" />
+      <xsd:import schemaLocation="HelperService_xsd_24.xsd" namespace="http://www.ech.ch/xmlns/eCH-0010-f/5" />
+      <xsd:import schemaLocation="HelperService_xsd_25.xsd" namespace="http://www.ech.ch/xmlns/eCH-0098-f/2" />
+      <xsd:import schemaLocation="HelperService_xsd_26.xsd" namespace="http://www.ech.ch/xmlns/eCH-0097/1" />
+      <xsd:import schemaLocation="HelperService_xsd_27.xsd" namespace="http://www.ech.ch/xmlns/eCH-0046/2" />
+      <xsd:import schemaLocation="HelperService_xsd_28.xsd" namespace="http://www.ech.ch/xmlns/eCH-0044/2" />
+      <xsd:import schemaLocation="HelperService_xsd_29.xsd" namespace="http://www.ech.ch/xmlns/eCH-0010/4" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IHelperService_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_StartWorkflow_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkflow" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_StartWorkflow_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkflowResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_StartWorkflow_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:IsagWebServiceFaultDetails" xmlns:q1="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_StartWorkflowAndGetResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkflowAndGetResult" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_StartWorkflowAndGetResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:StartWorkflowAndGetResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_StartWorkflowAndGetResult_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:IsagWebServiceFaultDetails" xmlns:q2="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetTopMostWorkflowDefinitionIdById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTopMostWorkflowDefinitionIdById" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetTopMostWorkflowDefinitionIdById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTopMostWorkflowDefinitionIdByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetTopMostWorkflowDefinitionIdById_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:IsagWebServiceFaultDetails" xmlns:q3="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CheckLicenseAndDataBaseConsistencyBeforeStartup_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLicenseAndDataBaseConsistencyBeforeStartup" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CheckLicenseAndDataBaseConsistencyBeforeStartup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckLicenseAndDataBaseConsistencyBeforeStartupResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CheckLicenseAndDataBaseConsistencyBeforeStartup_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:IsagWebServiceFaultDetails" xmlns:q4="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CreateReport_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateReport" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CreateReport_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateReportResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CreateReport_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:IsagWebServiceFaultDetails" xmlns:q5="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRangeDescription_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRangeDescription" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRangeDescription_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRangeDescriptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRangeDescription_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:IsagWebServiceFaultDetails" xmlns:q6="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRangeId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRangeId" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRangeId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRangeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRangeId_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q7:IsagWebServiceFaultDetails" xmlns:q7="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRange_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRange" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRange_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRangeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRange_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q8:IsagWebServiceFaultDetails" xmlns:q8="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetSqlSelectResult_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSqlSelectResult" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetSqlSelectResult_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSqlSelectResultResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetSqlSelectResult_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q9:IsagWebServiceFaultDetails" xmlns:q9="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDocument" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveDocument_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q10:IsagWebServiceFaultDetails" xmlns:q10="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocument" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetDocument_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q11:IsagWebServiceFaultDetails" xmlns:q11="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetFileNameForDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileNameForDocument" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetFileNameForDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFileNameForDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetFileNameForDocument_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q12:IsagWebServiceFaultDetails" xmlns:q12="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetAppServerProperties_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppServerProperties" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetAppServerProperties_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAppServerPropertiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetAppServerProperties_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q13:IsagWebServiceFaultDetails" xmlns:q13="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_AuthenticateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUser" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_AuthenticateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_AuthenticateUser_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q14:IsagWebServiceFaultDetails" xmlns:q14="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ExecuteWIC_PasswortAendern_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_PasswortAendern" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ExecuteWIC_PasswortAendern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_PasswortAendernResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ExecuteWIC_PasswortAendern_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q15:IsagWebServiceFaultDetails" xmlns:q15="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetZusatz_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetZusatz" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetZusatz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetZusatzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetZusatz_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q16:IsagWebServiceFaultDetails" xmlns:q16="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetAuskunft_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuskunft" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetAuskunft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuskunftResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetAuskunft_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q17:IsagWebServiceFaultDetails" xmlns:q17="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CreateAuskunftDokument_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAuskunftDokument" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CreateAuskunftDokument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAuskunftDokumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CreateAuskunftDokument_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q18:IsagWebServiceFaultDetails" xmlns:q18="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CreateAusweisDokument_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAusweisDokument" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CreateAusweisDokument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAusweisDokumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_CreateAusweisDokument_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q19:IsagWebServiceFaultDetails" xmlns:q19="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ReceiveInvoice_InputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveInvoice" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ReceiveInvoice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ReceiveInvoiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ReceiveInvoice_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q20:IsagWebServiceFaultDetails" xmlns:q20="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetInvoiceDocument_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDocument" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetInvoiceDocument_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInvoiceDocumentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetInvoiceDocument_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q21:IsagWebServiceFaultDetails" xmlns:q21="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_WillReceiveCrmMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:WillReceiveCrmMessages" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_WillReceiveCrmMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:WillReceiveCrmMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_WillReceiveCrmMessages_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q22:IsagWebServiceFaultDetails" xmlns:q22="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRechnungsuebersicht_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRechnungsuebersicht" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRechnungsuebersicht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRechnungsuebersichtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetRechnungsuebersicht_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q23:IsagWebServiceFaultDetails" xmlns:q23="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_RegisterPortalkunde_InputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPortalkunde" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_RegisterPortalkunde_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RegisterPortalkundeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_RegisterPortalkunde_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q24:IsagWebServiceFaultDetails" xmlns:q24="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_DeregisterPortalkunde_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeregisterPortalkunde" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_DeregisterPortalkunde_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeregisterPortalkundeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_DeregisterPortalkunde_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q25:IsagWebServiceFaultDetails" xmlns:q25="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetProjektParamAktivitaetsvorlagen_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjektParamAktivitaetsvorlagen" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetProjektParamAktivitaetsvorlagen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjektParamAktivitaetsvorlagenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetProjektParamAktivitaetsvorlagen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q26:IsagWebServiceFaultDetails" xmlns:q26="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetNextProjektAktivitaetsvorlagen_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextProjektAktivitaetsvorlagen" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetNextProjektAktivitaetsvorlagen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNextProjektAktivitaetsvorlagenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetNextProjektAktivitaetsvorlagen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q27:IsagWebServiceFaultDetails" xmlns:q27="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveProjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProjekt" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveProjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveProjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q28:IsagWebServiceFaultDetails" xmlns:q28="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveProjektAktivitaet_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProjektAktivitaet" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveProjektAktivitaet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProjektAktivitaetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveProjektAktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q29:IsagWebServiceFaultDetails" xmlns:q29="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveZusatz_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveZusatz" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveZusatz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveZusatzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveZusatz_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q30:IsagWebServiceFaultDetails" xmlns:q30="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ExecuteWIC_EinwohnerSuche_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_EinwohnerSuche" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ExecuteWIC_EinwohnerSuche_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_EinwohnerSucheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ExecuteWIC_EinwohnerSuche_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q31:IsagWebServiceFaultDetails" xmlns:q31="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetDatensichtData_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatensichtData" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetDatensichtData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatensichtDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetDatensichtData_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q32:IsagWebServiceFaultDetails" xmlns:q32="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetDatensichtDataReferenztyp_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatensichtDataReferenztyp" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetDatensichtDataReferenztyp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDatensichtDataReferenztypResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetDatensichtDataReferenztyp_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q33:IsagWebServiceFaultDetails" xmlns:q33="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ExecutePreisrechner_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecutePreisrechner" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ExecutePreisrechner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecutePreisrechnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_ExecutePreisrechner_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q34:IsagWebServiceFaultDetails" xmlns:q34="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveSubjektWithDublettenCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSubjektWithDublettenCheck" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveSubjektWithDublettenCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSubjektWithDublettenCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_SaveSubjektWithDublettenCheck_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q35:IsagWebServiceFaultDetails" xmlns:q35="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetTimeSeriesValues_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeSeriesValues" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetTimeSeriesValues_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeSeriesValuesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetTimeSeriesValues_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q36:IsagWebServiceFaultDetails" xmlns:q36="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetTimeSeriesFromMeteringpoint_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeSeriesFromMeteringpoint" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetTimeSeriesFromMeteringpoint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTimeSeriesFromMeteringpointResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetTimeSeriesFromMeteringpoint_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q37:IsagWebServiceFaultDetails" xmlns:q37="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetEinwohnerCitysoft_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinwohnerCitysoft" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetEinwohnerCitysoft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinwohnerCitysoftResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_GetEinwohnerCitysoft_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q38:IsagWebServiceFaultDetails" xmlns:q38="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueOldestEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueOldestEntry" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueOldestEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueOldestEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueOldestEntry_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q39:IsagWebServiceFaultDetails" xmlns:q39="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueOpenEntries_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueOpenEntries" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueOpenEntries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueOpenEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueOpenEntries_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q40:IsagWebServiceFaultDetails" xmlns:q40="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueDeleteEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueDeleteEntry" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueDeleteEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueDeleteEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueDeleteEntry_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q41:IsagWebServiceFaultDetails" xmlns:q41="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueInsertError_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueInsertError" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueInsertError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueInsertErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueInsertError_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q42:IsagWebServiceFaultDetails" xmlns:q42="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueInsertUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueInsertUsage" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueInsertUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueInsertUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueInsertUsage_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q43:IsagWebServiceFaultDetails" xmlns:q43="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueDeleteUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueDeleteUsage" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueDeleteUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_ExecuteExternQueueDeleteUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_ExecuteExternQueueDeleteUsage_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q44:IsagWebServiceFaultDetails" xmlns:q44="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_FindGebaeudeStrukturExtern_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_FindGebaeudeStrukturExtern" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_FindGebaeudeStrukturExtern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_FindGebaeudeStrukturExternResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_FindGebaeudeStrukturExtern_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q45:IsagWebServiceFaultDetails" xmlns:q45="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_GetGebaeude_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_GetGebaeude" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_GetGebaeude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_GetGebaeudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_GetGebaeude_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q46:IsagWebServiceFaultDetails" xmlns:q46="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_SaveGebaeude_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_SaveGebaeude" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_SaveGebaeude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_SaveGebaeudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_SaveGebaeude_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q47:IsagWebServiceFaultDetails" xmlns:q47="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_SaveZusatz_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_SaveZusatz" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_SaveZusatz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_SaveZusatzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_SaveZusatz_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q48:IsagWebServiceFaultDetails" xmlns:q48="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_CreateAvisierungKampagne_InputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_CreateAvisierungKampagne" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_CreateAvisierungKampagne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NIS_CreateAvisierungKampagneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHelperService_NIS_CreateAvisierungKampagne_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q49:IsagWebServiceFaultDetails" xmlns:q49="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:portType name="IHelperService">
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/Ping" message="tns:IHelperService_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/PingResponse" message="tns:IHelperService_Ping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartWorkflow">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/StartWorkflow" message="tns:IHelperService_StartWorkflow_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/StartWorkflowResponse" message="tns:IHelperService_StartWorkflow_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/StartWorkflowIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_StartWorkflow_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="StartWorkflowAndGetResult">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/StartWorkflowAndGetResult" message="tns:IHelperService_StartWorkflowAndGetResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/StartWorkflowAndGetResultResponse" message="tns:IHelperService_StartWorkflowAndGetResult_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/StartWorkflowAndGetResultIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_StartWorkflowAndGetResult_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMostWorkflowDefinitionIdById">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetTopMostWorkflowDefinitionIdById" message="tns:IHelperService_GetTopMostWorkflowDefinitionIdById_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetTopMostWorkflowDefinitionIdByIdResponse" message="tns:IHelperService_GetTopMostWorkflowDefinitionIdById_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetTopMostWorkflowDefinitionIdByIdIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetTopMostWorkflowDefinitionIdById_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicenseAndDataBaseConsistencyBeforeStartup">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/CheckLicenseAndDataBaseConsistencyBeforeStartup" message="tns:IHelperService_CheckLicenseAndDataBaseConsistencyBeforeStartup_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/CheckLicenseAndDataBaseConsistencyBeforeStartupResponse" message="tns:IHelperService_CheckLicenseAndDataBaseConsistencyBeforeStartup_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/CheckLicenseAndDataBaseConsistencyBeforeStartupIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_CheckLicenseAndDataBaseConsistencyBeforeStartup_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateReport">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/CreateReport" message="tns:IHelperService_CreateReport_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/CreateReportResponse" message="tns:IHelperService_CreateReport_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/CreateReportIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_CreateReport_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRangeDescription">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRangeDescription" message="tns:IHelperService_GetRangeDescription_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRangeDescriptionResponse" message="tns:IHelperService_GetRangeDescription_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRangeDescriptionIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetRangeDescription_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRangeId">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRangeId" message="tns:IHelperService_GetRangeId_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRangeIdResponse" message="tns:IHelperService_GetRangeId_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRangeIdIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetRangeId_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRange">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRange" message="tns:IHelperService_GetRange_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRangeResponse" message="tns:IHelperService_GetRange_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRangeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetRange_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSqlSelectResult">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetSqlSelectResult" message="tns:IHelperService_GetSqlSelectResult_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetSqlSelectResultResponse" message="tns:IHelperService_GetSqlSelectResult_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetSqlSelectResultIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetSqlSelectResult_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveDocument">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveDocument" message="tns:IHelperService_SaveDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveDocumentResponse" message="tns:IHelperService_SaveDocument_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveDocumentIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_SaveDocument_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetDocument" message="tns:IHelperService_GetDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetDocumentResponse" message="tns:IHelperService_GetDocument_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetDocumentIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetDocument_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFileNameForDocument">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetFileNameForDocument" message="tns:IHelperService_GetFileNameForDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetFileNameForDocumentResponse" message="tns:IHelperService_GetFileNameForDocument_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetFileNameForDocumentIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetFileNameForDocument_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAppServerProperties">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetAppServerProperties" message="tns:IHelperService_GetAppServerProperties_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetAppServerPropertiesResponse" message="tns:IHelperService_GetAppServerProperties_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetAppServerPropertiesIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetAppServerProperties_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/AuthenticateUser" message="tns:IHelperService_AuthenticateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/AuthenticateUserResponse" message="tns:IHelperService_AuthenticateUser_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/AuthenticateUserIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_AuthenticateUser_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_PasswortAendern">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/ExecuteWIC_PasswortAendern" message="tns:IHelperService_ExecuteWIC_PasswortAendern_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/ExecuteWIC_PasswortAendernResponse" message="tns:IHelperService_ExecuteWIC_PasswortAendern_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/ExecuteWIC_PasswortAendernIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_ExecuteWIC_PasswortAendern_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetZusatz">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetZusatz" message="tns:IHelperService_GetZusatz_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetZusatzResponse" message="tns:IHelperService_GetZusatz_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetZusatzIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetZusatz_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuskunft">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetAuskunft" message="tns:IHelperService_GetAuskunft_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetAuskunftResponse" message="tns:IHelperService_GetAuskunft_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetAuskunftIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetAuskunft_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAuskunftDokument">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/CreateAuskunftDokument" message="tns:IHelperService_CreateAuskunftDokument_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/CreateAuskunftDokumentResponse" message="tns:IHelperService_CreateAuskunftDokument_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/CreateAuskunftDokumentIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_CreateAuskunftDokument_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAusweisDokument">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/CreateAusweisDokument" message="tns:IHelperService_CreateAusweisDokument_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/CreateAusweisDokumentResponse" message="tns:IHelperService_CreateAusweisDokument_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/CreateAusweisDokumentIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_CreateAusweisDokument_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveInvoice">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/ReceiveInvoice" message="tns:IHelperService_ReceiveInvoice_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/ReceiveInvoiceResponse" message="tns:IHelperService_ReceiveInvoice_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/ReceiveInvoiceIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_ReceiveInvoice_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceDocument">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetInvoiceDocument" message="tns:IHelperService_GetInvoiceDocument_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetInvoiceDocumentResponse" message="tns:IHelperService_GetInvoiceDocument_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetInvoiceDocumentIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetInvoiceDocument_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WillReceiveCrmMessages">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/WillReceiveCrmMessages" message="tns:IHelperService_WillReceiveCrmMessages_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/WillReceiveCrmMessagesResponse" message="tns:IHelperService_WillReceiveCrmMessages_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/WillReceiveCrmMessagesIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_WillReceiveCrmMessages_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRechnungsuebersicht">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRechnungsuebersicht" message="tns:IHelperService_GetRechnungsuebersicht_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRechnungsuebersichtResponse" message="tns:IHelperService_GetRechnungsuebersicht_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetRechnungsuebersichtIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetRechnungsuebersicht_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPortalkunde">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/RegisterPortalkunde" message="tns:IHelperService_RegisterPortalkunde_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/RegisterPortalkundeResponse" message="tns:IHelperService_RegisterPortalkunde_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/RegisterPortalkundeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_RegisterPortalkunde_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeregisterPortalkunde">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/DeregisterPortalkunde" message="tns:IHelperService_DeregisterPortalkunde_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/DeregisterPortalkundeResponse" message="tns:IHelperService_DeregisterPortalkunde_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/DeregisterPortalkundeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_DeregisterPortalkunde_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjektParamAktivitaetsvorlagen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetProjektParamAktivitaetsvorlagen" message="tns:IHelperService_GetProjektParamAktivitaetsvorlagen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetProjektParamAktivitaetsvorlagenResponse" message="tns:IHelperService_GetProjektParamAktivitaetsvorlagen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetProjektParamAktivitaetsvorlagenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetProjektParamAktivitaetsvorlagen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNextProjektAktivitaetsvorlagen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetNextProjektAktivitaetsvorlagen" message="tns:IHelperService_GetNextProjektAktivitaetsvorlagen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetNextProjektAktivitaetsvorlagenResponse" message="tns:IHelperService_GetNextProjektAktivitaetsvorlagen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetNextProjektAktivitaetsvorlagenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetNextProjektAktivitaetsvorlagen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveProjekt" message="tns:IHelperService_SaveProjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveProjektResponse" message="tns:IHelperService_SaveProjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveProjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_SaveProjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjektAktivitaet">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveProjektAktivitaet" message="tns:IHelperService_SaveProjektAktivitaet_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveProjektAktivitaetResponse" message="tns:IHelperService_SaveProjektAktivitaet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveProjektAktivitaetIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_SaveProjektAktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveZusatz">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveZusatz" message="tns:IHelperService_SaveZusatz_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveZusatzResponse" message="tns:IHelperService_SaveZusatz_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveZusatzIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_SaveZusatz_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_EinwohnerSuche">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/ExecuteWIC_EinwohnerSuche" message="tns:IHelperService_ExecuteWIC_EinwohnerSuche_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/ExecuteWIC_EinwohnerSucheResponse" message="tns:IHelperService_ExecuteWIC_EinwohnerSuche_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/ExecuteWIC_EinwohnerSucheIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_ExecuteWIC_EinwohnerSuche_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatensichtData">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetDatensichtData" message="tns:IHelperService_GetDatensichtData_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetDatensichtDataResponse" message="tns:IHelperService_GetDatensichtData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetDatensichtDataIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetDatensichtData_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDatensichtDataReferenztyp">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetDatensichtDataReferenztyp" message="tns:IHelperService_GetDatensichtDataReferenztyp_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetDatensichtDataReferenztypResponse" message="tns:IHelperService_GetDatensichtDataReferenztyp_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetDatensichtDataReferenztypIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetDatensichtDataReferenztyp_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePreisrechner">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/ExecutePreisrechner" message="tns:IHelperService_ExecutePreisrechner_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/ExecutePreisrechnerResponse" message="tns:IHelperService_ExecutePreisrechner_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/ExecutePreisrechnerIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_ExecutePreisrechner_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubjektWithDublettenCheck">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveSubjektWithDublettenCheck" message="tns:IHelperService_SaveSubjektWithDublettenCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveSubjektWithDublettenCheckResponse" message="tns:IHelperService_SaveSubjektWithDublettenCheck_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/SaveSubjektWithDublettenCheckIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_SaveSubjektWithDublettenCheck_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeSeriesValues">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetTimeSeriesValues" message="tns:IHelperService_GetTimeSeriesValues_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetTimeSeriesValuesResponse" message="tns:IHelperService_GetTimeSeriesValues_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetTimeSeriesValuesIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetTimeSeriesValues_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeSeriesFromMeteringpoint">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetTimeSeriesFromMeteringpoint" message="tns:IHelperService_GetTimeSeriesFromMeteringpoint_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetTimeSeriesFromMeteringpointResponse" message="tns:IHelperService_GetTimeSeriesFromMeteringpoint_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetTimeSeriesFromMeteringpointIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetTimeSeriesFromMeteringpoint_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEinwohnerCitysoft">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetEinwohnerCitysoft" message="tns:IHelperService_GetEinwohnerCitysoft_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetEinwohnerCitysoftResponse" message="tns:IHelperService_GetEinwohnerCitysoft_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/GetEinwohnerCitysoftIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_GetEinwohnerCitysoft_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueOldestEntry">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueOldestEntry" message="tns:IHelperService_NIS_ExecuteExternQueueOldestEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueOldestEntryResponse" message="tns:IHelperService_NIS_ExecuteExternQueueOldestEntry_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueOldestEntryIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_ExecuteExternQueueOldestEntry_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueOpenEntries">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueOpenEntries" message="tns:IHelperService_NIS_ExecuteExternQueueOpenEntries_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueOpenEntriesResponse" message="tns:IHelperService_NIS_ExecuteExternQueueOpenEntries_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueOpenEntriesIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_ExecuteExternQueueOpenEntries_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueDeleteEntry">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueDeleteEntry" message="tns:IHelperService_NIS_ExecuteExternQueueDeleteEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueDeleteEntryResponse" message="tns:IHelperService_NIS_ExecuteExternQueueDeleteEntry_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueDeleteEntryIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_ExecuteExternQueueDeleteEntry_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueInsertError">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueInsertError" message="tns:IHelperService_NIS_ExecuteExternQueueInsertError_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueInsertErrorResponse" message="tns:IHelperService_NIS_ExecuteExternQueueInsertError_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueInsertErrorIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_ExecuteExternQueueInsertError_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueInsertUsage">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueInsertUsage" message="tns:IHelperService_NIS_ExecuteExternQueueInsertUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueInsertUsageResponse" message="tns:IHelperService_NIS_ExecuteExternQueueInsertUsage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueInsertUsageIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_ExecuteExternQueueInsertUsage_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueDeleteUsage">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueDeleteUsage" message="tns:IHelperService_NIS_ExecuteExternQueueDeleteUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueDeleteUsageResponse" message="tns:IHelperService_NIS_ExecuteExternQueueDeleteUsage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueDeleteUsageIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_ExecuteExternQueueDeleteUsage_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_FindGebaeudeStrukturExtern">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_FindGebaeudeStrukturExtern" message="tns:IHelperService_NIS_FindGebaeudeStrukturExtern_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_FindGebaeudeStrukturExternResponse" message="tns:IHelperService_NIS_FindGebaeudeStrukturExtern_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_FindGebaeudeStrukturExternIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_FindGebaeudeStrukturExtern_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_GetGebaeude">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_GetGebaeude" message="tns:IHelperService_NIS_GetGebaeude_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_GetGebaeudeResponse" message="tns:IHelperService_NIS_GetGebaeude_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_GetGebaeudeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_GetGebaeude_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_SaveGebaeude">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_SaveGebaeude" message="tns:IHelperService_NIS_SaveGebaeude_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_SaveGebaeudeResponse" message="tns:IHelperService_NIS_SaveGebaeude_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_SaveGebaeudeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_SaveGebaeude_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_SaveZusatz">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_SaveZusatz" message="tns:IHelperService_NIS_SaveZusatz_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_SaveZusatzResponse" message="tns:IHelperService_NIS_SaveZusatz_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_SaveZusatzIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_SaveZusatz_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="NIS_CreateAvisierungKampagne">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_CreateAvisierungKampagne" message="tns:IHelperService_NIS_CreateAvisierungKampagne_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_CreateAvisierungKampagneResponse" message="tns:IHelperService_NIS_CreateAvisierungKampagne_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IHelperService/NIS_CreateAvisierungKampagneIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IHelperService_NIS_CreateAvisierungKampagne_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IHelperService" type="tns:IHelperService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IHelperService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/Ping" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StartWorkflow">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/StartWorkflow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="StartWorkflowAndGetResult">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/StartWorkflowAndGetResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTopMostWorkflowDefinitionIdById">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetTopMostWorkflowDefinitionIdById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CheckLicenseAndDataBaseConsistencyBeforeStartup">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/CheckLicenseAndDataBaseConsistencyBeforeStartup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateReport">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/CreateReport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRangeDescription">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetRangeDescription" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRangeId">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetRangeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRange">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetRange" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSqlSelectResult">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetSqlSelectResult" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveDocument">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/SaveDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDocument">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetFileNameForDocument">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetFileNameForDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAppServerProperties">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetAppServerProperties" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="AuthenticateUser">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/AuthenticateUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_PasswortAendern">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/ExecuteWIC_PasswortAendern" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetZusatz">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetZusatz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuskunft">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetAuskunft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAuskunftDokument">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/CreateAuskunftDokument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAusweisDokument">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/CreateAusweisDokument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ReceiveInvoice">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/ReceiveInvoice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvoiceDocument">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetInvoiceDocument" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="WillReceiveCrmMessages">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/WillReceiveCrmMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetRechnungsuebersicht">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetRechnungsuebersicht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="RegisterPortalkunde">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/RegisterPortalkunde" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DeregisterPortalkunde">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/DeregisterPortalkunde" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjektParamAktivitaetsvorlagen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetProjektParamAktivitaetsvorlagen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetNextProjektAktivitaetsvorlagen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetNextProjektAktivitaetsvorlagen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/SaveProjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjektAktivitaet">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/SaveProjektAktivitaet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveZusatz">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/SaveZusatz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_EinwohnerSuche">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/ExecuteWIC_EinwohnerSuche" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatensichtData">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetDatensichtData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetDatensichtDataReferenztyp">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetDatensichtDataReferenztyp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecutePreisrechner">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/ExecutePreisrechner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubjektWithDublettenCheck">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/SaveSubjektWithDublettenCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeSeriesValues">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetTimeSeriesValues" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetTimeSeriesFromMeteringpoint">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetTimeSeriesFromMeteringpoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEinwohnerCitysoft">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/GetEinwohnerCitysoft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueOldestEntry">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueOldestEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueOpenEntries">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueOpenEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueDeleteEntry">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueDeleteEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueInsertError">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueInsertError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueInsertUsage">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueInsertUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_ExecuteExternQueueDeleteUsage">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_ExecuteExternQueueDeleteUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_FindGebaeudeStrukturExtern">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_FindGebaeudeStrukturExtern" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_GetGebaeude">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_GetGebaeude" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_SaveGebaeude">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_SaveGebaeude" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_SaveZusatz">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_SaveZusatz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="NIS_CreateAvisierungKampagne">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IHelperService/NIS_CreateAvisierungKampagne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HelperService">
+    <wsdl:port name="BasicHttpBinding_IHelperService" binding="tns:BasicHttpBinding_IHelperService">
+      <soap:address location="http://localhost:8092/HelperService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

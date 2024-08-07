@@ -1,0 +1,142 @@
+﻿/* Set Variables */
+:root {
+  --font-family-sans-serif: Interstate, Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --innocolor: #0058A5;
+  --innobg: #031c25;
+  --innobga: rgba(3,28,37,1);
+  --innobutton: #364f59;
+  --innobuttonshadow: rgba(54,79,89,.5);
+  --innobuttonborder: #031c25;
+}
+
+body {
+  /*font-family: var(--font-family-sans-serif); -- no support in IE, so sadly no :( */
+  font-family: Interstate, Helvetica, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.innosolv-text {
+  color: #fff;
+}
+.innosolv-logo {
+  padding-bottom: 0.5rem;
+  margin-right: 0.8rem;
+}
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+footer-link, footer-link:hover, footer-link:active, footer-link:visited {
+  /*color: var(--innocolor); -- no support in IE, so sadly no :( */
+  color: #0058A5;
+}
+
+.btn-innosolv, .btn-innosolv:active, .btn-innosolv:hover, .btn-innosolv:focus {
+  /*color: var(--white);
+  background-color: var(--innobutton);
+  border-color: var(--innobuttonborder); -- no support in IE, so sadly no :( */
+  color: #fff;
+  background-color: #364f59;
+  border-color: #031c25;
+}
+
+tn-innosolv:focus {
+  /*box-shadow: 0 0 0 .2rem var(--innobuttonshadow); -- no support in IE, so sadly no :( */
+  box-shadow: 0 0 0 .2rem rgba(54,79,89,.5);
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  /*color: var(--white);
+  background-color: var(--innobutton);
+  border-color: var(--innobuttonborder); -- no support in IE, so sadly no :( */
+  color: #fff;
+  background-color: #364f59;
+  border-color: #031c25;
+}
+
+
+html {
+  font-size: 14px;
+}
+@media (min-width: var(--breakpoint-md)) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.border-top {
+  border-top: 1px solid var(--light);
+}
+
+.border-bottom {
+  border-bottom: 1px solid var(--light);
+}
+
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+.text-parameter-name {
+  font-size: medium;
+}
+
+.text-parameter-name-required {
+  font-weight: bold;
+}
+
+.text-parameter-indicator-required {
+  color: red;
+  font-size: smaller;
+}
+
+.text-parameter-source {
+  color: gray;
+  font-size: smaller;
+  font-style: italic;
+}
+
+.text-response-name {
+  font-size: medium;
+}
+
+.text-response-name-not-null {
+  font-weight: bold;
+}
+
+.text-response-indicator-null {
+  color: gray;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  white-space: nowrap;
+  line-height: 60px; /* Vertically center the text there */
+}
+
+.innosolv-header-bg {
+  /*background-color: var(--innobg);
+  background-color: var(--innobga);  -- no support in IE, so sadly no :( */
+  background-color: #031c25;
+  background-color: rgba(3,28,37,1);
+}

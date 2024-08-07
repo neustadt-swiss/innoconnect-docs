@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 400;
+  src: local('Helvetica'),
+    url("../fonts/helvetica-regular.eot?#iefix") format("eot"),
+    url("../fonts/helvetica-regular.woff") format("woff"),
+    url("../fonts/helvetica-regular.ttf") format("truetype"),
+    url("../fonts/helvetica-regular.svg#d17bc040-9e8b-4397-8356-8153f4a64edf") format("svg");
+}
+
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 200;
+  src: local('Helvetica Light'), local('Helvetica-Light'),
+    url("../fonts/helvetica-light.eot?#iefix") format("eot"),
+    url("../fonts/helvetica-light.woff") format("woff"),
+    url("../fonts/helvetica-light.ttf") format("truetype"),
+    url("../fonts/helvetica-light.svg#05ad458f-263b-413f-b054-6001a987ff3e") format("svg");
+}
+
+@font-face {
+  font-family: "Helvetica";
+  font-style: normal;
+  font-weight: 700;
+  src: local('Helvetica Bold'), local('Helvetica-Bold'),
+    url("../fonts/helvetica-bold.eot?#iefix") format("eot"),
+    url("../fonts/helvetica-bold.woff") format("woff"),
+    url("../fonts/helvetica-bold.ttf") format("truetype"),
+    url("../fonts/helvetica-bold.svg#874bbc4a-0091-49f0-93ef-ea4e69c3cc7a") format("svg");
+}

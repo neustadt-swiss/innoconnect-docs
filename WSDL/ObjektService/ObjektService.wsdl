@@ -1,0 +1,418 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="ObjektService" targetNamespace="http://innosolv.ch/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://innosolv.ch/webservices/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IObjektService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://innosolv.ch/webservices/Imports">
+      <xsd:import schemaLocation="ObjektService_xsd_1.xsd" namespace="http://innosolv.ch/webservices/" />
+      <xsd:import schemaLocation="ObjektService_xsd_2.xsd" namespace="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+      <xsd:import schemaLocation="ObjektService_xsd_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IObjektService_FindEigentum_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindEigentum" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindEigentum_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindEigentumResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindEigentum_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:IsagWebServiceFaultDetails" xmlns:q1="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetGebaeude_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGebaeude" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetGebaeude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGebaeudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetGebaeude_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:IsagWebServiceFaultDetails" xmlns:q2="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_SaveGebaeude_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGebaeude" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_SaveGebaeude_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGebaeudeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_SaveGebaeude_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:IsagWebServiceFaultDetails" xmlns:q3="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindGebiet_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindGebiet" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindGebiet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindGebietResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindGebiet_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:IsagWebServiceFaultDetails" xmlns:q4="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetGebiet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGebiet" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetGebiet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGebietResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetGebiet_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:IsagWebServiceFaultDetails" xmlns:q5="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetGrundstueck_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGrundstueck" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetGrundstueck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGrundstueckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetGrundstueck_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:IsagWebServiceFaultDetails" xmlns:q6="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjekt" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q7:IsagWebServiceFaultDetails" xmlns:q7="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektEigentuemerVerwaltung_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektEigentuemerVerwaltung" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektEigentuemerVerwaltung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektEigentuemerVerwaltungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektEigentuemerVerwaltung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q8:IsagWebServiceFaultDetails" xmlns:q8="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektDetails" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektDetails_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q9:IsagWebServiceFaultDetails" xmlns:q9="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektHinweis_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektHinweis" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektHinweis_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektHinweisResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektHinweis_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q10:IsagWebServiceFaultDetails" xmlns:q10="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektPerson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektPerson" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektPerson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektPersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektPerson_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q11:IsagWebServiceFaultDetails" xmlns:q11="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektschluessel_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektschluessel" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektschluessel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindObjektschluesselResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindObjektschluessel_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q12:IsagWebServiceFaultDetails" xmlns:q12="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindGebaeudeStrukturExtern_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindGebaeudeStrukturExtern" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindGebaeudeStrukturExtern_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindGebaeudeStrukturExternResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_FindGebaeudeStrukturExtern_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q13:IsagWebServiceFaultDetails" xmlns:q13="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetObjektzuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjektzuord" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetObjektzuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetObjektzuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetObjektzuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q14:IsagWebServiceFaultDetails" xmlns:q14="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetWohnung_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWohnung" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetWohnung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWohnungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IObjektService_GetWohnung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q15:IsagWebServiceFaultDetails" xmlns:q15="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:portType name="IObjektService">
+    <wsdl:operation name="FindEigentum">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindEigentum" message="tns:IObjektService_FindEigentum_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindEigentumResponse" message="tns:IObjektService_FindEigentum_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindEigentumIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_FindEigentum_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGebaeude">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetGebaeude" message="tns:IObjektService_GetGebaeude_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetGebaeudeResponse" message="tns:IObjektService_GetGebaeude_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetGebaeudeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_GetGebaeude_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGebaeude">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/SaveGebaeude" message="tns:IObjektService_SaveGebaeude_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/SaveGebaeudeResponse" message="tns:IObjektService_SaveGebaeude_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/SaveGebaeudeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_SaveGebaeude_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindGebiet">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindGebiet" message="tns:IObjektService_FindGebiet_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindGebietResponse" message="tns:IObjektService_FindGebiet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindGebietIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_FindGebiet_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGebiet">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetGebiet" message="tns:IObjektService_GetGebiet_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetGebietResponse" message="tns:IObjektService_GetGebiet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetGebietIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_GetGebiet_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGrundstueck">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetGrundstueck" message="tns:IObjektService_GetGrundstueck_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetGrundstueckResponse" message="tns:IObjektService_GetGrundstueck_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetGrundstueckIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_GetGrundstueck_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindObjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjekt" message="tns:IObjektService_FindObjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektResponse" message="tns:IObjektService_FindObjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_FindObjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindObjektEigentuemerVerwaltung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektEigentuemerVerwaltung" message="tns:IObjektService_FindObjektEigentuemerVerwaltung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektEigentuemerVerwaltungResponse" message="tns:IObjektService_FindObjektEigentuemerVerwaltung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektEigentuemerVerwaltungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_FindObjektEigentuemerVerwaltung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindObjektDetails">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektDetails" message="tns:IObjektService_FindObjektDetails_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektDetailsResponse" message="tns:IObjektService_FindObjektDetails_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektDetailsIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_FindObjektDetails_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindObjektHinweis">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektHinweis" message="tns:IObjektService_FindObjektHinweis_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektHinweisResponse" message="tns:IObjektService_FindObjektHinweis_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektHinweisIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_FindObjektHinweis_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindObjektPerson">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektPerson" message="tns:IObjektService_FindObjektPerson_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektPersonResponse" message="tns:IObjektService_FindObjektPerson_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektPersonIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_FindObjektPerson_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindObjektschluessel">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektschluessel" message="tns:IObjektService_FindObjektschluessel_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektschluesselResponse" message="tns:IObjektService_FindObjektschluessel_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindObjektschluesselIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_FindObjektschluessel_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindGebaeudeStrukturExtern">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindGebaeudeStrukturExtern" message="tns:IObjektService_FindGebaeudeStrukturExtern_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindGebaeudeStrukturExternResponse" message="tns:IObjektService_FindGebaeudeStrukturExtern_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/FindGebaeudeStrukturExternIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_FindGebaeudeStrukturExtern_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetObjektzuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetObjektzuord" message="tns:IObjektService_GetObjektzuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetObjektzuordResponse" message="tns:IObjektService_GetObjektzuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetObjektzuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_GetObjektzuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWohnung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetWohnung" message="tns:IObjektService_GetWohnung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetWohnungResponse" message="tns:IObjektService_GetWohnung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IObjektService/GetWohnungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IObjektService_GetWohnung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IObjektService" type="tns:IObjektService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IObjektService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="FindEigentum">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/FindEigentum" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGebaeude">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/GetGebaeude" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGebaeude">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/SaveGebaeude" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindGebiet">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/FindGebiet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGebiet">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/GetGebiet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGrundstueck">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/GetGrundstueck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindObjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/FindObjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindObjektEigentuemerVerwaltung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/FindObjektEigentuemerVerwaltung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindObjektDetails">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/FindObjektDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindObjektHinweis">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/FindObjektHinweis" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindObjektPerson">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/FindObjektPerson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindObjektschluessel">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/FindObjektschluessel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindGebaeudeStrukturExtern">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/FindGebaeudeStrukturExtern" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetObjektzuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/GetObjektzuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetWohnung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IObjektService/GetWohnung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ObjektService">
+    <wsdl:port name="BasicHttpBinding_IObjektService" binding="tns:BasicHttpBinding_IObjektService">
+      <soap:address location="http://localhost:8092/ObjektService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

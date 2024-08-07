@@ -1,0 +1,1301 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innoconnect / Schnittstelle</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/font-interstate/interstate.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/img/favicon-192.png" type="image/png" sizes="192x192">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark navbar-toggleable-sm innosolv-header-bg text-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="innosolv-logo" href="index.html"><img src="assets/img/innosolv-logo.png" height="22" /></a>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid pb-4">
+        <h1><a href="index.html">innoconnect</a> / Schnittstelle</h1>
+        <div class="row mt-4">
+            <div class="col-lg-auto">
+                <div class="card">
+                    <div class="card-body pt-3">
+                        <h2>Übersicht</h2>
+                        <ul class="list-inline">
+                        <li><a href="#endpoints-customeridentification">CustomerIdentification</a></li>
+                        <li><a href="#endpoints-customeridentificationcriterias">CustomerIdentificationCriterias</a></li>
+                        <li><a href="#endpoints-externqueuedeleteentry">ExternQueueDeleteEntry</a></li>
+                        <li><a href="#endpoints-externqueuedeletespecialentries">ExternQueueDeleteSpecialEntries</a></li>
+                        <li><a href="#endpoints-externqueueinserterror">ExternQueueInsertError</a></li>
+                        <li><a href="#endpoints-externqueueinsertusage">ExternQueueInsertUsage</a></li>
+                        <li><a href="#endpoints-externqueueoldestentry">ExternQueueOldestEntry</a></li>
+                        <li><a href="#endpoints-externqueueopenentries">ExternQueueOpenEntries</a></li>
+                        <li><a href="#endpoints-externqueueopenentrieslist">ExternQueueOpenEntriesList</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg pt-4 pt-lg-0">
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <h2 id="endpoints-customeridentification">CustomerIdentification</h2>
+                                <p>Das Objekt CustomerIdentification unterstützt die folgenden Endpunkte.</p>
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <th>Endpunkt</th>
+                                        <th>Beschreibung</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#execute-customeridentification">
+                                                    <span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/customeridentification/execute</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                Führt eine Aktion aus.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <h4 id="execute-customeridentification"><span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/customeridentification/execute</span></h4>
+                                <p class="text-secondary">Führt eine Aktion aus.</p>
+                                <div class="row">
+                                <div class="col">
+                                    <h5>Parameters</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Default</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">ID_SWSystem</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">IDentifizierungSzenario</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">IDentifizierungParameter1</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">IDentifizierungParameter2</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">IDentifizierungParameter3</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">IDentifizierungParameter4</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h5>Response</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Herkunft</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">ID_Subjekt</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <h2 id="endpoints-customeridentificationcriterias">CustomerIdentificationCriterias</h2>
+                                <p>Das Objekt CustomerIdentificationCriterias unterstützt die folgenden Endpunkte.</p>
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <th>Endpunkt</th>
+                                        <th>Beschreibung</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#execute-customeridentificationcriterias">
+                                                    <span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/customeridentificationcriterias/execute</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                Führt eine Aktion aus.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <h4 id="execute-customeridentificationcriterias"><span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/customeridentificationcriterias/execute</span></h4>
+                                <p class="text-secondary">Führt eine Aktion aus.</p>
+                                <div class="row">
+                                <div class="col">
+                                    <h5>Parameters</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Default</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">ID_SWSystem</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">IDentifizierungSzenario</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h5>Response</h5>
+                                    <p class="text-secondary">Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.</p>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Herkunft</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">ParameterLabel</span>
+                                                    <br />
+                                                    String
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">ParameterOrder</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">ParameterType</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td>System.Datentyp</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">ParameterTypeDescription</span>
+                                                    <br />
+                                                    String
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <h2 id="endpoints-externqueuedeleteentry">ExternQueueDeleteEntry</h2>
+                                <p>Das Objekt ExternQueueDeleteEntry unterstützt die folgenden Endpunkte.</p>
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <th>Endpunkt</th>
+                                        <th>Beschreibung</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#execute-externqueuedeleteentry">
+                                                    <span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueuedeleteentry/execute</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                Führt eine Aktion aus.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <h4 id="execute-externqueuedeleteentry"><span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueuedeleteentry/execute</span></h4>
+                                <p class="text-secondary">Führt eine Aktion aus.</p>
+                                <div class="row">
+                                <div class="col">
+                                    <h5>Parameters</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Default</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">ID_Externqueue</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h5>Response</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Herkunft</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <h2 id="endpoints-externqueuedeletespecialentries">ExternQueueDeleteSpecialEntries</h2>
+                                <p>Das Objekt ExternQueueDeleteSpecialEntries unterstützt die folgenden Endpunkte.</p>
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <th>Endpunkt</th>
+                                        <th>Beschreibung</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#execute-externqueuedeletespecialentries">
+                                                    <span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueuedeletespecialentries/execute</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                Führt eine Aktion aus.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <h4 id="execute-externqueuedeletespecialentries"><span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueuedeletespecialentries/execute</span></h4>
+                                <p class="text-secondary">Führt eine Aktion aus.</p>
+                                <div class="row">
+                                <div class="col">
+                                    <h5>Parameters</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Default</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">ID_SWSystem</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">Referenztyp</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>Systemrolle.Referenztyp</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">ReferenzId</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h5>Response</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Herkunft</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <h2 id="endpoints-externqueueinserterror">ExternQueueInsertError</h2>
+                                <p>Das Objekt ExternQueueInsertError unterstützt die folgenden Endpunkte.</p>
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <th>Endpunkt</th>
+                                        <th>Beschreibung</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#execute-externqueueinserterror">
+                                                    <span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueueinserterror/execute</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                Führt eine Aktion aus.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <h4 id="execute-externqueueinserterror"><span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueueinserterror/execute</span></h4>
+                                <p class="text-secondary">Führt eine Aktion aus.</p>
+                                <div class="row">
+                                <div class="col">
+                                    <h5>Parameters</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Default</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">ID_Externqueue</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">Fehler</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h5>Response</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Herkunft</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <h2 id="endpoints-externqueueinsertusage">ExternQueueInsertUsage</h2>
+                                <p>Das Objekt ExternQueueInsertUsage unterstützt die folgenden Endpunkte.</p>
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <th>Endpunkt</th>
+                                        <th>Beschreibung</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#execute-externqueueinsertusage">
+                                                    <span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueueinsertusage/execute</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                Führt eine Aktion aus.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <h4 id="execute-externqueueinsertusage"><span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueueinsertusage/execute</span></h4>
+                                <p class="text-secondary">Führt eine Aktion aus.</p>
+                                <div class="row">
+                                <div class="col">
+                                    <h5>Parameters</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Default</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">ID_SWSystem</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">Referenztyp</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>Systemrolle.Referenztyp</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">ReferenzId</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">ID_Externqueue</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">ID_Systemrolle</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">Mandant</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">ID1</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">ID2</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h5>Response</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Herkunft</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <h2 id="endpoints-externqueueoldestentry">ExternQueueOldestEntry</h2>
+                                <p>Das Objekt ExternQueueOldestEntry unterstützt die folgenden Endpunkte.</p>
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <th>Endpunkt</th>
+                                        <th>Beschreibung</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#execute-externqueueoldestentry">
+                                                    <span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueueoldestentry/execute</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                Führt eine Aktion aus.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <h4 id="execute-externqueueoldestentry"><span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueueoldestentry/execute</span></h4>
+                                <p class="text-secondary">Führt eine Aktion aus.</p>
+                                <div class="row">
+                                <div class="col">
+                                    <h5>Parameters</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Default</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">ID_SWSystem</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">Referenztyp</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>Systemrolle.Referenztyp</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h5>Response</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Herkunft</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">ReferenzId</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">ReferenzId2</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">MutArt</span>
+                                                    <br />
+                                                    String
+                                                </td>
+                                                <td>System.Operation</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">ID_Externqueue</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Gueltigab</span>
+                                                    <br />
+                                                    DateTime
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Mandant</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">ReferenzID3</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Referenztyp</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td>Systemrolle.Referenztyp</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">SubreferenzID</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">SubreferenzID2</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">SubreferenzID3</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Subreferenztyp</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td>Systemrolle.Referenztyp</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">Submutart</span>
+                                                    <br />
+                                                    String
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">ID_Infoparam</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Infoparam_Schema</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <h2 id="endpoints-externqueueopenentries">ExternQueueOpenEntries</h2>
+                                <p>Das Objekt ExternQueueOpenEntries unterstützt die folgenden Endpunkte.</p>
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <th>Endpunkt</th>
+                                        <th>Beschreibung</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#execute-externqueueopenentries">
+                                                    <span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueueopenentries/execute</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                Führt eine Aktion aus.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <h4 id="execute-externqueueopenentries"><span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueueopenentries/execute</span></h4>
+                                <p class="text-secondary">Führt eine Aktion aus.</p>
+                                <div class="row">
+                                <div class="col">
+                                    <h5>Parameters</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Default</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">ID_SWSystem</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">Referenztyp</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>Systemrolle.Referenztyp</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h5>Response</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Herkunft</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">Anzahl</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <h2 id="endpoints-externqueueopenentrieslist">ExternQueueOpenEntriesList</h2>
+                                <p>Das Objekt ExternQueueOpenEntriesList unterstützt die folgenden Endpunkte.</p>
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <th>Endpunkt</th>
+                                        <th>Beschreibung</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#execute-externqueueopenentrieslist">
+                                                    <span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueueopenentrieslist/execute</span>
+                                                </a>
+                                            </td>
+                                            <td>
+                                                Führt eine Aktion aus.
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <h4 id="execute-externqueueopenentrieslist"><span class="bg-secondary rounded-lg text-white px-3 py-1">POST</span> <span class="text-monospace">schnittstelle/externqueueopenentrieslist/execute</span></h4>
+                                <p class="text-secondary">Führt eine Aktion aus.</p>
+                                <div class="row">
+                                <div class="col">
+                                    <h5>Parameters</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Default</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">ID_SWSystem</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">Referenztyp</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(body)</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h5>Response</h5>
+                                    <p class="text-secondary">Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.</p>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Herkunft</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">Referenztyp</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td>Systemrolle.Referenztyp</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">ReferenzId</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">ID_Externqueue</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Mandant</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Submutart</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Subreferenztyp</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">SubreferenzID3</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">SubreferenzID2</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">SubreferenzID</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">ReferenzID3</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Gueltigab</span>
+                                                    <br />
+                                                    DateTime
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">MutArt</span>
+                                                    <br />
+                                                    String
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">ReferenzId2</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">ID_Infoparam</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Infoparam_Schema</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-top footer text-muted">
+        <div class="container-fluid">
+            &copy; 2023 <a href="https://www.innosolv.ch/" title="innosolv AG">innosolv AG</a>, <span class="small text-info">generated on 21.03.2023</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+

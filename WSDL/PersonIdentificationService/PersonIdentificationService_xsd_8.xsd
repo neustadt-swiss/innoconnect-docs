@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.ech.ch/xmlns/eCH-0185/1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ech.ch/xmlns/eCH-0185/1">
+  <xs:import schemaLocation="PersonIdentificationService_xsd_9.xsd" namespace="http://www.ech.ch/xmlns/eCH-0010/5" />
+  <xs:complexType name="petData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="dogData" type="tns:dogDataType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="dogDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:token" />
+      <xs:element minOccurs="0" maxOccurs="1" name="sex" type="tns:sexType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="birthDate" type="tns:datePartiallyKnownType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="chipNumber" type="xs:token" />
+      <xs:element minOccurs="0" maxOccurs="1" name="tattooNumber" type="xs:token" />
+      <xs:element minOccurs="0" maxOccurs="1" name="ANISnumber" type="xs:nonNegativeInteger" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="sexType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="datePartiallyKnownType">
+    <xs:sequence>
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element minOccurs="0" maxOccurs="1" name="year" type="xs:gYear" />
+        <xs:element minOccurs="0" maxOccurs="1" name="yearMonth" type="xs:gYearMonth" />
+        <xs:element minOccurs="1" maxOccurs="1" name="yearMonthDay" type="xs:date" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="moveInAdditionalDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="housingSituationMoveInMunicipality" type="tns:housingSituationMoveInMunicipalityType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="housingSituationMoveInMunicipalityType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" name="housingSituationType" type="tns:housingSituationTypeType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="name" type="xs:token" />
+      <xs:element minOccurs="0" maxOccurs="1" name="address" type="q1:addressInformationType" xmlns:q1="http://www.ech.ch/xmlns/eCH-0010/5" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="housingSituationTypeType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="dwellingIdentificationType">
+    <xs:sequence>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element minOccurs="1" maxOccurs="1" name="EGID" type="xs:unsignedInt" />
+        <xs:element minOccurs="1" maxOccurs="1" name="EWID" type="xs:unsignedInt" />
+        <xs:element minOccurs="0" maxOccurs="1" name="administrativDwellingNumber" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="floor" type="xs:string" />
+        <xs:element minOccurs="0" maxOccurs="1" name="positionOnFloor" type="xs:string" />
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="healthInsuranceDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="cardNumber" type="xs:token" />
+      <xs:element minOccurs="0" maxOccurs="1" name="insuranceName" type="xs:token" />
+      <xs:element minOccurs="1" maxOccurs="1" name="checkResult" type="tns:checkResulType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="checkResulType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Yes" />
+      <xs:enumeration value="No" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="contactDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="phoneNumber" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="emailAddress" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="serviceDataType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="serviceIdentification" type="xs:nonNegativeInteger" />
+      <xs:element minOccurs="0" maxOccurs="1" name="serviceName" type="xs:token" />
+      <xs:element minOccurs="0" maxOccurs="1" name="serviceAmount" type="xs:nonNegativeInteger" />
+      <xs:element minOccurs="1" maxOccurs="1" name="serviceOrderDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="serviceDuration" type="xs:token" />
+      <xs:element minOccurs="0" maxOccurs="1" name="serviceDescription" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

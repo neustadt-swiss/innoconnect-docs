@@ -1,0 +1,46 @@
+﻿body
+{
+  font-family: Calibri, "Trebuchet MS" , Verdana, Arial, Helvetica;
+  font-size:11pt;
+}
+
+h1 
+{
+}
+
+div.index
+{
+  background-color: #ddddff;
+  margin: 10px;
+  padding:10px;
+}
+
+table
+{
+  
+  border-collapse: collapse;
+  
+}
+
+.listinfo
+{
+    margin-bottom:5px;
+}
+
+thead td
+{
+  font-weight: bold;
+  background-color: #ddddff;
+}
+
+td
+{
+  border:1px solid #cccccc;
+  width: 200px;
+}
+
+.redandbold
+{
+	color: #ff0000;
+	font-weight: bold;
+}

@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innoconnect Dokumentation (REST)</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/font-interstate/interstate.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/img/favicon-192.png" type="image/png" sizes="192x192">
+</head>
+
+<body>
+    <header>
+        <nav
+            class="navbar navbar-expand-sm navbar-dark navbar-toggleable-sm innosolv-header-bg text-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="innosolv-logo" href="index.html"><img src="assets/img/innosolv-logo.png" height="22" /></a>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid pb-4">
+
+        <div class="py-3 px-3">
+            <h1>innoconnect Dokumentation (REST)</h1>
+            <p>
+                Über die <a href="https://de.wikipedia.org/wiki/Representational_State_Transfer">REST</a> Schnitstelle von innoconnect kann mit innosolv intergagiert werden.
+            </p>
+        </div>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-auto">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>Übersicht</h2>
+                            <p>
+                                Die Schnittstelle ist in die folgenden Bereiche aufgeteilt.
+                            </p>
+                            <ul class="list-inline">
+                                <li><a href="basis-service-rest.html">Basis</a></li>
+                                <li><a href="einwmut-service-rest.html">EinwMut</a></li>
+                                <li><a href="einwohner-service-rest.html">Einwohner</a></li>
+                                <li><a href="faktura-service-rest.html">Faktura</a></li>
+                                <li><a href="objekt-service-rest.html">Objekt</a></li>
+                                <li><a href="schnittstelle-service-rest.html">Schnittstelle</a></li>
+                                <li><a href="techanl-service-rest.html">TechAnl</a></li>
+                                <li><a href="helper-service-rest.html">Helper</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg pt-4 pt-lg-0">
+                    <div class="card">
+                        <div class="card-body">
+                            <h2>Zugriff</h2>
+                            <p>
+                                Der Zugriff auf die Objekte der Schnittstelle erfolgt über HTTP Requests gegen <span class="text-monospace">{server}/innoconnect/api</span>.
+                            </p>
+                            <p>
+                                Parameter welche in der Dokumentation mit <span class="text-monospace">(query)</span> angegeben sind müssen im URI des Requests mitgegeben werden.
+                                Alle Parameter mit der Kennzeichung <span class="text-monospace">(body)</span> müssen im Body des Requests, in einem JSON oder XML Objekt übergeben werden.
+                            </p>
+
+                            <h3>Authentifizierung</h3>
+                            <p>
+                                Die Schnittstelle verwendet <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication_scheme">Basic Auth zur</a> Authentifizierung. Als Benutzer muss die ID des Softwaresystem, sowie die das entsprechende Passwort verwendet werden.
+                            </p>
+
+                            <h3>Beispiel</h3>
+                            <p>
+                                Im folgenden Beispiel werden auf der Adresse mit der Id 1 Daten angepasst. Für den Request und die Response wird JSON verwendet (<span class="text-monospace">Content-Type</span> Header)
+                                und angefordert (<span class="text-monospace">Accept</span> Header).
+                            </p>
+
+                            <label for="example-1-request">URI</label>
+                            <p class="text-monospace bg-dark rounded-sm p-2 text-white" id="example-1-request">
+                                <span class="bg-warning rounded-lg px-3 py-1">PUT</span> https://server.local/innoconnect/api/basis/adresse/1
+                            </p>
+
+                            <label for="example-1-body">HTTP Headers</label>
+                            <pre id="example-1-body" class="text-monospace bg-dark rounded-sm p-2 text-white">
+Content-Type: text/json
+Accept: text/json</pre>
+
+                            <label for="example-1-body">Body</label>
+                            <pre id="example-1-body" class="text-monospace bg-dark rounded-sm p-2 text-white">
+{
+    "Strasse": "Linsebühlstrasse",
+    "ID_Ort": 123,
+    "GueltigVon": "2002-09-27T00:00:00",
+    ...
+}</pre>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="border-top footer text-muted">
+        <div class="container-fluid">
+            &copy; 2023 <a href="https://www.innosolv.ch/" title="innosolv AG">innosolv AG</a>, <span class="small text-info">generated on 21.03.2023</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>

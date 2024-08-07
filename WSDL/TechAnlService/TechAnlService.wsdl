@@ -1,0 +1,730 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="TechAnlService" targetNamespace="http://innosolv.ch/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://innosolv.ch/webservices/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="BasicHttpBinding_ITechAnlService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://innosolv.ch/webservices/Imports">
+      <xsd:import schemaLocation="TechAnlService_xsd_1.xsd" namespace="http://innosolv.ch/webservices/" />
+      <xsd:import schemaLocation="TechAnlService_xsd_2.xsd" namespace="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+      <xsd:import schemaLocation="TechAnlService_xsd_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ITechAnlService_GetAuftrag_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuftrag" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetAuftrag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuftragResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetAuftrag_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:IsagWebServiceFaultDetails" xmlns:q1="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveAuftrag_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAuftrag" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveAuftrag_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAuftragResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveAuftrag_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:IsagWebServiceFaultDetails" xmlns:q2="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetAuftragpos_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuftragpos" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetAuftragpos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuftragposResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetAuftragpos_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:IsagWebServiceFaultDetails" xmlns:q3="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveAuftragpos_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAuftragpos" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveAuftragpos_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAuftragposResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveAuftragpos_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:IsagWebServiceFaultDetails" xmlns:q4="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetAuftragwork_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuftragwork" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetAuftragwork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAuftragworkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetAuftragwork_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:IsagWebServiceFaultDetails" xmlns:q5="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveAuftragwork_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAuftragwork" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveAuftragwork_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAuftragworkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveAuftragwork_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:IsagWebServiceFaultDetails" xmlns:q6="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindAvisierungAuftragposition_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAvisierungAuftragposition" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindAvisierungAuftragposition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAvisierungAuftragpositionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindAvisierungAuftragposition_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q7:IsagWebServiceFaultDetails" xmlns:q7="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_ExecuteExportZaehlerdatenaustausch_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExportZaehlerdatenaustausch" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_ExecuteExportZaehlerdatenaustausch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExportZaehlerdatenaustauschResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_ExecuteExportZaehlerdatenaustausch_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q8:IsagWebServiceFaultDetails" xmlns:q8="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindGeraet_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindGeraet" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindGeraet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindGeraetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindGeraet_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q9:IsagWebServiceFaultDetails" xmlns:q9="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindGeraetestandort_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindGeraetestandort" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindGeraetestandort_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindGeraetestandortResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindGeraetestandort_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q10:IsagWebServiceFaultDetails" xmlns:q10="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindInstallationsobjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindInstallationsobjekt" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindInstallationsobjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindInstallationsobjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindInstallationsobjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q11:IsagWebServiceFaultDetails" xmlns:q11="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetInstallationsobjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstallationsobjekt" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetInstallationsobjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetInstallationsobjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetInstallationsobjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q12:IsagWebServiceFaultDetails" xmlns:q12="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveInstallationsobjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveInstallationsobjekt" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveInstallationsobjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveInstallationsobjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveInstallationsobjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q13:IsagWebServiceFaultDetails" xmlns:q13="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindInstzaehlwerk_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindInstzaehlwerk" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindInstzaehlwerk_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindInstzaehlwerkResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindInstzaehlwerk_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q14:IsagWebServiceFaultDetails" xmlns:q14="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindMesspunkteFuerZeitreihen_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMesspunkteFuerZeitreihen" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindMesspunkteFuerZeitreihen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMesspunkteFuerZeitreihenResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindMesspunkteFuerZeitreihen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q15:IsagWebServiceFaultDetails" xmlns:q15="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindAlleMesspunkteFuerPortalbenutzer_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAlleMesspunkteFuerPortalbenutzer" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindAlleMesspunkteFuerPortalbenutzer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAlleMesspunkteFuerPortalbenutzerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindAlleMesspunkteFuerPortalbenutzer_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q16:IsagWebServiceFaultDetails" xmlns:q16="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindMesspunktkennzeichnungWS_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMesspunktkennzeichnungWS" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindMesspunktkennzeichnungWS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMesspunktkennzeichnungWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindMesspunktkennzeichnungWS_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q17:IsagWebServiceFaultDetails" xmlns:q17="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetMesspunktkennzeichnungWS_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesspunktkennzeichnungWS" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetMesspunktkennzeichnungWS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMesspunktkennzeichnungWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_GetMesspunktkennzeichnungWS_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q18:IsagWebServiceFaultDetails" xmlns:q18="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveMesspunktkennzeichnungWS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMesspunktkennzeichnungWS" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveMesspunktkennzeichnungWS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveMesspunktkennzeichnungWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_SaveMesspunktkennzeichnungWS_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q19:IsagWebServiceFaultDetails" xmlns:q19="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindMesswertWS_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindMesswertWS" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindMesswertWS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindMesswertWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindMesswertWS_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q20:IsagWebServiceFaultDetails" xmlns:q20="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindSlp_verrechnungstyp_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSlp_verrechnungstyp" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindSlp_verrechnungstyp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSlp_verrechnungstypResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindSlp_verrechnungstyp_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q21:IsagWebServiceFaultDetails" xmlns:q21="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindTrekommando_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindTrekommando" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindTrekommando_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTrekommandoResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindTrekommando_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q22:IsagWebServiceFaultDetails" xmlns:q22="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindTrezuordgeraet_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindTrezuordgeraet" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindTrezuordgeraet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTrezuordgeraetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindTrezuordgeraet_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q23:IsagWebServiceFaultDetails" xmlns:q23="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindTrezuordgeraetWS_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindTrezuordgeraetWS" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindTrezuordgeraetWS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindTrezuordgeraetWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindTrezuordgeraetWS_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q24:IsagWebServiceFaultDetails" xmlns:q24="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_ExecuteTrezuordgeraetWS_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteTrezuordgeraetWS" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_ExecuteTrezuordgeraetWS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteTrezuordgeraetWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_ExecuteTrezuordgeraetWS_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q25:IsagWebServiceFaultDetails" xmlns:q25="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_ExecuteUpdateStatusAvisierung_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteUpdateStatusAvisierung" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_ExecuteUpdateStatusAvisierung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteUpdateStatusAvisierungResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_ExecuteUpdateStatusAvisierung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q26:IsagWebServiceFaultDetails" xmlns:q26="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindZaehlerObjektProjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindZaehlerObjektProjekt" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindZaehlerObjektProjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindZaehlerObjektProjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITechAnlService_FindZaehlerObjektProjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q27:IsagWebServiceFaultDetails" xmlns:q27="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:portType name="ITechAnlService">
+    <wsdl:operation name="GetAuftrag">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetAuftrag" message="tns:ITechAnlService_GetAuftrag_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetAuftragResponse" message="tns:ITechAnlService_GetAuftrag_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetAuftragIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_GetAuftrag_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAuftrag">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveAuftrag" message="tns:ITechAnlService_SaveAuftrag_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveAuftragResponse" message="tns:ITechAnlService_SaveAuftrag_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveAuftragIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_SaveAuftrag_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuftragpos">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetAuftragpos" message="tns:ITechAnlService_GetAuftragpos_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetAuftragposResponse" message="tns:ITechAnlService_GetAuftragpos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetAuftragposIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_GetAuftragpos_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAuftragpos">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveAuftragpos" message="tns:ITechAnlService_SaveAuftragpos_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveAuftragposResponse" message="tns:ITechAnlService_SaveAuftragpos_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveAuftragposIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_SaveAuftragpos_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAuftragwork">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetAuftragwork" message="tns:ITechAnlService_GetAuftragwork_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetAuftragworkResponse" message="tns:ITechAnlService_GetAuftragwork_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetAuftragworkIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_GetAuftragwork_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAuftragwork">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveAuftragwork" message="tns:ITechAnlService_SaveAuftragwork_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveAuftragworkResponse" message="tns:ITechAnlService_SaveAuftragwork_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveAuftragworkIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_SaveAuftragwork_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAvisierungAuftragposition">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindAvisierungAuftragposition" message="tns:ITechAnlService_FindAvisierungAuftragposition_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindAvisierungAuftragpositionResponse" message="tns:ITechAnlService_FindAvisierungAuftragposition_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindAvisierungAuftragpositionIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindAvisierungAuftragposition_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExportZaehlerdatenaustausch">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/ExecuteExportZaehlerdatenaustausch" message="tns:ITechAnlService_ExecuteExportZaehlerdatenaustausch_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/ExecuteExportZaehlerdatenaustauschResponse" message="tns:ITechAnlService_ExecuteExportZaehlerdatenaustausch_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/ExecuteExportZaehlerdatenaustauschIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_ExecuteExportZaehlerdatenaustausch_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindGeraet">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindGeraet" message="tns:ITechAnlService_FindGeraet_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindGeraetResponse" message="tns:ITechAnlService_FindGeraet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindGeraetIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindGeraet_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindGeraetestandort">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindGeraetestandort" message="tns:ITechAnlService_FindGeraetestandort_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindGeraetestandortResponse" message="tns:ITechAnlService_FindGeraetestandort_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindGeraetestandortIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindGeraetestandort_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindInstallationsobjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindInstallationsobjekt" message="tns:ITechAnlService_FindInstallationsobjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindInstallationsobjektResponse" message="tns:ITechAnlService_FindInstallationsobjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindInstallationsobjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindInstallationsobjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallationsobjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetInstallationsobjekt" message="tns:ITechAnlService_GetInstallationsobjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetInstallationsobjektResponse" message="tns:ITechAnlService_GetInstallationsobjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetInstallationsobjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_GetInstallationsobjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveInstallationsobjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveInstallationsobjekt" message="tns:ITechAnlService_SaveInstallationsobjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveInstallationsobjektResponse" message="tns:ITechAnlService_SaveInstallationsobjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveInstallationsobjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_SaveInstallationsobjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindInstzaehlwerk">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindInstzaehlwerk" message="tns:ITechAnlService_FindInstzaehlwerk_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindInstzaehlwerkResponse" message="tns:ITechAnlService_FindInstzaehlwerk_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindInstzaehlwerkIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindInstzaehlwerk_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMesspunkteFuerZeitreihen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindMesspunkteFuerZeitreihen" message="tns:ITechAnlService_FindMesspunkteFuerZeitreihen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindMesspunkteFuerZeitreihenResponse" message="tns:ITechAnlService_FindMesspunkteFuerZeitreihen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindMesspunkteFuerZeitreihenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindMesspunkteFuerZeitreihen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAlleMesspunkteFuerPortalbenutzer">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindAlleMesspunkteFuerPortalbenutzer" message="tns:ITechAnlService_FindAlleMesspunkteFuerPortalbenutzer_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindAlleMesspunkteFuerPortalbenutzerResponse" message="tns:ITechAnlService_FindAlleMesspunkteFuerPortalbenutzer_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindAlleMesspunkteFuerPortalbenutzerIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindAlleMesspunkteFuerPortalbenutzer_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMesspunktkennzeichnungWS">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindMesspunktkennzeichnungWS" message="tns:ITechAnlService_FindMesspunktkennzeichnungWS_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindMesspunktkennzeichnungWSResponse" message="tns:ITechAnlService_FindMesspunktkennzeichnungWS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindMesspunktkennzeichnungWSIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindMesspunktkennzeichnungWS_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMesspunktkennzeichnungWS">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetMesspunktkennzeichnungWS" message="tns:ITechAnlService_GetMesspunktkennzeichnungWS_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetMesspunktkennzeichnungWSResponse" message="tns:ITechAnlService_GetMesspunktkennzeichnungWS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/GetMesspunktkennzeichnungWSIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_GetMesspunktkennzeichnungWS_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveMesspunktkennzeichnungWS">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveMesspunktkennzeichnungWS" message="tns:ITechAnlService_SaveMesspunktkennzeichnungWS_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveMesspunktkennzeichnungWSResponse" message="tns:ITechAnlService_SaveMesspunktkennzeichnungWS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/SaveMesspunktkennzeichnungWSIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_SaveMesspunktkennzeichnungWS_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindMesswertWS">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindMesswertWS" message="tns:ITechAnlService_FindMesswertWS_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindMesswertWSResponse" message="tns:ITechAnlService_FindMesswertWS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindMesswertWSIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindMesswertWS_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSlp_verrechnungstyp">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindSlp_verrechnungstyp" message="tns:ITechAnlService_FindSlp_verrechnungstyp_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindSlp_verrechnungstypResponse" message="tns:ITechAnlService_FindSlp_verrechnungstyp_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindSlp_verrechnungstypIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindSlp_verrechnungstyp_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindTrekommando">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindTrekommando" message="tns:ITechAnlService_FindTrekommando_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindTrekommandoResponse" message="tns:ITechAnlService_FindTrekommando_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindTrekommandoIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindTrekommando_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindTrezuordgeraet">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindTrezuordgeraet" message="tns:ITechAnlService_FindTrezuordgeraet_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindTrezuordgeraetResponse" message="tns:ITechAnlService_FindTrezuordgeraet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindTrezuordgeraetIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindTrezuordgeraet_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindTrezuordgeraetWS">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindTrezuordgeraetWS" message="tns:ITechAnlService_FindTrezuordgeraetWS_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindTrezuordgeraetWSResponse" message="tns:ITechAnlService_FindTrezuordgeraetWS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindTrezuordgeraetWSIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindTrezuordgeraetWS_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteTrezuordgeraetWS">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/ExecuteTrezuordgeraetWS" message="tns:ITechAnlService_ExecuteTrezuordgeraetWS_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/ExecuteTrezuordgeraetWSResponse" message="tns:ITechAnlService_ExecuteTrezuordgeraetWS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/ExecuteTrezuordgeraetWSIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_ExecuteTrezuordgeraetWS_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteUpdateStatusAvisierung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/ExecuteUpdateStatusAvisierung" message="tns:ITechAnlService_ExecuteUpdateStatusAvisierung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/ExecuteUpdateStatusAvisierungResponse" message="tns:ITechAnlService_ExecuteUpdateStatusAvisierung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/ExecuteUpdateStatusAvisierungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_ExecuteUpdateStatusAvisierung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindZaehlerObjektProjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindZaehlerObjektProjekt" message="tns:ITechAnlService_FindZaehlerObjektProjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindZaehlerObjektProjektResponse" message="tns:ITechAnlService_FindZaehlerObjektProjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ITechAnlService/FindZaehlerObjektProjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ITechAnlService_FindZaehlerObjektProjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ITechAnlService" type="tns:ITechAnlService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ITechAnlService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAuftrag">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/GetAuftrag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAuftrag">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/SaveAuftrag" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuftragpos">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/GetAuftragpos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAuftragpos">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/SaveAuftragpos" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAuftragwork">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/GetAuftragwork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAuftragwork">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/SaveAuftragwork" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAvisierungAuftragposition">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindAvisierungAuftragposition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExportZaehlerdatenaustausch">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/ExecuteExportZaehlerdatenaustausch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindGeraet">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindGeraet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindGeraetestandort">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindGeraetestandort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindInstallationsobjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindInstallationsobjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetInstallationsobjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/GetInstallationsobjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveInstallationsobjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/SaveInstallationsobjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindInstzaehlwerk">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindInstzaehlwerk" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindMesspunkteFuerZeitreihen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindMesspunkteFuerZeitreihen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAlleMesspunkteFuerPortalbenutzer">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindAlleMesspunkteFuerPortalbenutzer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindMesspunktkennzeichnungWS">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindMesspunktkennzeichnungWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetMesspunktkennzeichnungWS">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/GetMesspunktkennzeichnungWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveMesspunktkennzeichnungWS">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/SaveMesspunktkennzeichnungWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindMesswertWS">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindMesswertWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindSlp_verrechnungstyp">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindSlp_verrechnungstyp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindTrekommando">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindTrekommando" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindTrezuordgeraet">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindTrezuordgeraet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindTrezuordgeraetWS">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindTrezuordgeraetWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteTrezuordgeraetWS">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/ExecuteTrezuordgeraetWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteUpdateStatusAvisierung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/ExecuteUpdateStatusAvisierung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindZaehlerObjektProjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ITechAnlService/FindZaehlerObjektProjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TechAnlService">
+    <wsdl:port name="BasicHttpBinding_ITechAnlService" binding="tns:BasicHttpBinding_ITechAnlService">
+      <soap:address location="http://localhost:8092/TechAnlService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

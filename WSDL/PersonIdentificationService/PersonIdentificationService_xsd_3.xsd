@@ -1,0 +1,162 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.ech.ch/xmlns/eCH-0194/1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ech.ch/xmlns/eCH-0194/1">
+  <xs:import schemaLocation="PersonIdentificationService_xsd_4.xsd" namespace="http://www.ech.ch/xmlns/eCH-0044/4" />
+  <xs:import schemaLocation="PersonIdentificationService_xsd_5.xsd" namespace="http://www.ech.ch/xmlns/eCH-0007/5" />
+  <xs:import schemaLocation="PersonIdentificationService_xsd_6.xsd" namespace="http://www.ech.ch/xmlns/eCH-0011/8" />
+  <xs:import schemaLocation="PersonIdentificationService_xsd_8.xsd" namespace="http://www.ech.ch/xmlns/eCH-0185/1" />
+  <xs:complexType name="personMoveRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="personIdentification" type="q1:personIdentificationType" xmlns:q1="http://www.ech.ch/xmlns/eCH-0044/4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="municipality" type="q2:swissMunicipalityType" xmlns:q2="http://www.ech.ch/xmlns/eCH-0007/5" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="personMoveResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="reportingMunicipality" type="q3:swissMunicipalityType" xmlns:q3="http://www.ech.ch/xmlns/eCH-0007/5" />
+      <xs:element minOccurs="1" maxOccurs="1" name="personKnown" type="xs:boolean" />
+      <xs:element minOccurs="0" maxOccurs="1" name="personIdentification" type="q4:personIdentificationType" xmlns:q4="http://www.ech.ch/xmlns/eCH-0044/4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="moveAllowed" type="tns:moveAllowedType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="residencePermitMovingPerson" type="q5:residencePermitDataType" xmlns:q5="http://www.ech.ch/xmlns/eCH-0011/8" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="petData" type="q6:petData" xmlns:q6="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="relatedPerson">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="personIdentification" type="q7:personIdentificationType" xmlns:q7="http://www.ech.ch/xmlns/eCH-0044/4" />
+            <xs:element minOccurs="0" maxOccurs="1" name="residencePermitRelatedPerson" type="q8:residencePermitDataType" xmlns:q8="http://www.ech.ch/xmlns/eCH-0011/8" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="petData" type="q9:petData" xmlns:q9="http://www.ech.ch/xmlns/eCH-0185/1" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="destination" type="tns:moveOutReportingDestinationType" />
+      <xs:element minOccurs="0" maxOccurs="1" name="moveInAdditionalData" type="q10:moveInAdditionalDataType" xmlns:q10="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dwellingIdentification" type="q11:dwellingIdentificationType" xmlns:q11="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="arrivalDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="healthInsuranceData" type="q12:healthInsuranceDataType" xmlns:q12="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:any minOccurs="0" maxOccurs="unbounded" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="moveAllowedType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1" />
+      <xs:enumeration value="2" />
+      <xs:enumeration value="3" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="moveOutReportingDestinationType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="moveOutMunicipality" type="q13:swissMunicipalityType" xmlns:q13="http://www.ech.ch/xmlns/eCH-0007/5" />
+      <xs:element minOccurs="0" maxOccurs="1" name="destinationMunicipality" type="q14:swissMunicipalityType" xmlns:q14="http://www.ech.ch/xmlns/eCH-0007/5" />
+      <xs:element minOccurs="0" maxOccurs="1" name="destinationAddress" type="q15:dwellingAddressType" xmlns:q15="http://www.ech.ch/xmlns/eCH-0011/8" />
+      <xs:element minOccurs="1" maxOccurs="1" name="departureDate" type="xs:date" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="platformMoveOut">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="personIdentification" type="q16:personIdentificationType" xmlns:q16="http://www.ech.ch/xmlns/eCH-0044/4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contactData" type="q17:contactDataType" xmlns:q17="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="destination" type="tns:moveOutReportingDestinationType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="petData" type="q18:petData" xmlns:q18="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="platformMoveIn">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="personIdentification" type="q19:personIdentificationType" xmlns:q19="http://www.ech.ch/xmlns/eCH-0044/4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contactData" type="q20:contactDataType" xmlns:q20="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="petData" type="q21:petData" xmlns:q21="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="serviceData" type="q22:serviceDataType" xmlns:q22="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="moveInAdditionalData" type="q23:moveInAdditionalDataType" xmlns:q23="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dwellingIdentification" type="q24:dwellingIdentificationType" xmlns:q24="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="arrivalDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="healthInsuranceData" type="q25:healthInsuranceDataType" xmlns:q25="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="platformMoveData">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="personIdentification" type="q26:personIdentificationType" xmlns:q26="http://www.ech.ch/xmlns/eCH-0044/4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contactData" type="q27:contactDataType" xmlns:q27="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="petData" type="q28:petData" xmlns:q28="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="serviceData" type="q29:serviceDataType" xmlns:q29="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dwellingAddress" type="q30:dwellingAddressType" xmlns:q30="http://www.ech.ch/xmlns/eCH-0011/8" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dwellingIdentification" type="q31:dwellingIdentificationType" xmlns:q31="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="platformMoveCommit">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="personIdentification" type="q32:personIdentificationType" xmlns:q32="http://www.ech.ch/xmlns/eCH-0044/4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="contactData" type="q33:contactDataType" xmlns:q33="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="destination" type="tns:moveOutReportingDestinationType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="petData" type="q34:petData" xmlns:q34="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="serviceData" type="q35:serviceDataType" xmlns:q35="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="moveInAdditionalData" type="q36:moveInAdditionalDataType" xmlns:q36="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="dwellingIdentification" type="q37:dwellingIdentificationType" xmlns:q37="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="arrivalDate" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="healthInsuranceData" type="q38:healthInsuranceDataType" xmlns:q38="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="platformMoveInAddress">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="personIdentification" type="q39:personIdentificationType" xmlns:q39="http://www.ech.ch/xmlns/eCH-0044/4" />
+      <xs:element minOccurs="0" maxOccurs="1" name="address" type="q40:dwellingAddressType" xmlns:q40="http://www.ech.ch/xmlns/eCH-0011/8" />
+      <xs:element minOccurs="0" maxOccurs="1" name="extension" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="negativeReportType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="generalError" type="tns:infoType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="personError">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="personIdentification" type="q41:personIdentificationType" xmlns:q41="http://www.ech.ch/xmlns/eCH-0044/4" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="errorInfo" type="tns:infoType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="infoType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="code">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="1" />
+            <xs:enumeration value="2" />
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element minOccurs="0" maxOccurs="1" name="textEnglish" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="textGerman" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="textFrench" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="1" name="textItalian" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="positiveReportType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="generalResponse" type="tns:infoType" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="personResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="1" name="personIdentification" type="q42:personIdentificationType" xmlns:q42="http://www.ech.ch/xmlns/eCH-0044/4" />
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="response" type="tns:infoType" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

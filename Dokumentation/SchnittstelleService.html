@@ -1,0 +1,1662 @@
+﻿<!doctype html>
+<html>
+<head>
+
+
+<title>SchnittstelleService</title>
+<link href="Documentationstyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<a href="index.html">Zum Index</a>
+<h1>SchnittstelleService</h1>
+<div class="index">
+<ul>
+        <li><a href="#ExecuteCustomerIdentificationCriterias">ExecuteCustomerIdentificationCriterias</a></li>
+            <li><a href="#ExecuteCustomerIdentification">ExecuteCustomerIdentification</a></li>
+            <li><a href="#ExecuteExternQueueOpenEntries">ExecuteExternQueueOpenEntries</a></li>
+            <li><a href="#ExecuteExternQueueOldestEntry">ExecuteExternQueueOldestEntry</a></li>
+            <li><a href="#ExecuteExternQueueInsertError">ExecuteExternQueueInsertError</a></li>
+            <li><a href="#ExecuteExternQueueDeleteEntry">ExecuteExternQueueDeleteEntry</a></li>
+            <li><a href="#ExecuteExternQueueInsertUsage">ExecuteExternQueueInsertUsage</a></li>
+            <li><a href="#ExecuteExternQueueDeleteSpecialEntries">ExecuteExternQueueDeleteSpecialEntries</a></li>
+            <li><a href="#ExecuteExternQueueOpenEntriesList">ExecuteExternQueueOpenEntriesList</a></li>
+    </ul>
+</div>
+<div class="details">
+        <h2 id="ExecuteCustomerIdentificationCriterias">ExecuteCustomerIdentificationCriterias</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_SWSystem
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        IDentifizierungSzenario
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ParameterLabel
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ParameterOrder
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ParameterType
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        System.Datentyp
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ParameterTypeDescription
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="ExecuteCustomerIdentification">ExecuteCustomerIdentification</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_SWSystem
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        IDentifizierungSzenario
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        IDentifizierungParameter1
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        IDentifizierungParameter2
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        IDentifizierungParameter3
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        IDentifizierungParameter4
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Subjekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="ExecuteExternQueueOpenEntries">ExecuteExternQueueOpenEntries</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_SWSystem
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Referenztyp
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Systemrolle.Referenztyp
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        Anzahl
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="ExecuteExternQueueOldestEntry">ExecuteExternQueueOldestEntry</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_SWSystem
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Referenztyp
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Systemrolle.Referenztyp
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ReferenzId
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ReferenzId2
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        MutArt
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        System.Operation
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Externqueue
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Gueltigab
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Mandant
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ReferenzID3
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Referenztyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Systemrolle.Referenztyp
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        SubreferenzID
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        SubreferenzID2
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        SubreferenzID3
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Subreferenztyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        Systemrolle.Referenztyp
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Submutart
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Infoparam
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Infoparam_Schema
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+            <h2 id="ExecuteExternQueueInsertError">ExecuteExternQueueInsertError</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Externqueue
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Fehler
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                        </tbody>
+        </table>                
+            <h2 id="ExecuteExternQueueDeleteEntry">ExecuteExternQueueDeleteEntry</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Externqueue
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                        </tbody>
+        </table>                
+            <h2 id="ExecuteExternQueueInsertUsage">ExecuteExternQueueInsertUsage</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_SWSystem
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Referenztyp
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Systemrolle.Referenztyp
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ReferenzId
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ID_Externqueue
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ID_Systemrolle
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Mandant
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ID1
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ID2
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                        </tbody>
+        </table>                
+            <h2 id="ExecuteExternQueueDeleteSpecialEntries">ExecuteExternQueueDeleteSpecialEntries</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_SWSystem
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Referenztyp
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Systemrolle.Referenztyp
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ReferenzId
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                        </tbody>
+        </table>                
+            <h2 id="ExecuteExternQueueOpenEntriesList">ExecuteExternQueueOpenEntriesList</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_SWSystem
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Referenztyp
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        Referenztyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Systemrolle.Referenztyp
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ReferenzId
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Externqueue
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Mandant
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Submutart
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Subreferenztyp
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        SubreferenzID3
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        SubreferenzID2
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        SubreferenzID
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ReferenzID3
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Gueltigab
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        MutArt
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ReferenzId2
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Infoparam
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Infoparam_Schema
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+    </div> 
+<br />
+(c) innosolv AG, Erstelldatum: 21.03.2023  
+</body>
+</html>

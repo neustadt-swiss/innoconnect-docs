@@ -1,0 +1,2862 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="BasisService" targetNamespace="http://innosolv.ch/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://innosolv.ch/webservices/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IBasisService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://innosolv.ch/webservices/Imports">
+      <xsd:import schemaLocation="BasisService_xsd_1.xsd" namespace="http://innosolv.ch/webservices/" />
+      <xsd:import schemaLocation="BasisService_xsd_2.xsd" namespace="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+      <xsd:import schemaLocation="BasisService_xsd_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IBasisService_ExecuteWIC_CheckAvailableDetailData_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_CheckAvailableDetailData" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_CheckAvailableDetailData_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_CheckAvailableDetailDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_CheckAvailableDetailData_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:IsagWebServiceFaultDetails" xmlns:q1="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_PartnerName_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_PartnerName" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_PartnerName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_PartnerNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_PartnerName_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:IsagWebServiceFaultDetails" xmlns:q2="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailKinder_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailKinder" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailKinder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailKinderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailKinder_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:IsagWebServiceFaultDetails" xmlns:q3="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailBeziehungen_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailBeziehungen" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailBeziehungen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailBeziehungenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailBeziehungen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:IsagWebServiceFaultDetails" xmlns:q4="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailHaushalt_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailHaushalt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailHaushalt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailHaushaltResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailHaushalt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:IsagWebServiceFaultDetails" xmlns:q5="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailAdressen_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailAdressen" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailAdressen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailAdressenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailAdressen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:IsagWebServiceFaultDetails" xmlns:q6="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailMeldeverhaeltnisse_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailMeldeverhaeltnisse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailMeldeverhaeltnisse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailMeldeverhaeltnisseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailMeldeverhaeltnisse_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q7:IsagWebServiceFaultDetails" xmlns:q7="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailZivilstaende_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailZivilstaende" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailZivilstaende_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailZivilstaendeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailZivilstaende_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q8:IsagWebServiceFaultDetails" xmlns:q8="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailArbeitgeber_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailArbeitgeber" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailArbeitgeber_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailArbeitgeberResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailArbeitgeber_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q9:IsagWebServiceFaultDetails" xmlns:q9="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailMassnahmen_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailMassnahmen" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailMassnahmen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailMassnahmenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailMassnahmen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q10:IsagWebServiceFaultDetails" xmlns:q10="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailZusaetzeSubjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailZusaetzeSubjekt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailZusaetzeSubjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailZusaetzeSubjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailZusaetzeSubjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q11:IsagWebServiceFaultDetails" xmlns:q11="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailZusaetzeEinwohner_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailZusaetzeEinwohner" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailZusaetzeEinwohner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailZusaetzeEinwohnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailZusaetzeEinwohner_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q12:IsagWebServiceFaultDetails" xmlns:q12="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailKommunikationen_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailKommunikationen" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailKommunikationen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailKommunikationenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailKommunikationen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q13:IsagWebServiceFaultDetails" xmlns:q13="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailAktivitaeten_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailAktivitaeten" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailAktivitaeten_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailAktivitaetenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailAktivitaeten_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q14:IsagWebServiceFaultDetails" xmlns:q14="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailHunde_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailHunde" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailHunde_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailHundeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailHunde_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q15:IsagWebServiceFaultDetails" xmlns:q15="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailLinks_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailLinks" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailLinks_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_DetailLinksResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_DetailLinks_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q16:IsagWebServiceFaultDetails" xmlns:q16="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Berechtigung_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_Berechtigung" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Berechtigung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_BerechtigungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Berechtigung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q17:IsagWebServiceFaultDetails" xmlns:q17="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Orgeinheit_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_Orgeinheit" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Orgeinheit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_OrgeinheitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Orgeinheit_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q18:IsagWebServiceFaultDetails" xmlns:q18="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_OrgeinheitEinstellungen_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_OrgeinheitEinstellungen" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_OrgeinheitEinstellungen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_OrgeinheitEinstellungenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_OrgeinheitEinstellungen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q19:IsagWebServiceFaultDetails" xmlns:q19="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_SubjektRechte_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_SubjektRechte" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_SubjektRechte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_SubjektRechteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_SubjektRechte_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q20:IsagWebServiceFaultDetails" xmlns:q20="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_EinwohnerSuche_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_EinwohnerSuche" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_EinwohnerSuche_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_EinwohnerSucheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_EinwohnerSuche_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q21:IsagWebServiceFaultDetails" xmlns:q21="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Protokoll_Suche_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_Protokoll_Suche" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Protokoll_Suche_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_Protokoll_SucheResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Protokoll_Suche_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q22:IsagWebServiceFaultDetails" xmlns:q22="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Protokoll_Detail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_Protokoll_Detail" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Protokoll_Detail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_Protokoll_DetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Protokoll_Detail_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q23:IsagWebServiceFaultDetails" xmlns:q23="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Polgemeinde_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_Polgemeinde" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Polgemeinde_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_PolgemeindeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_Polgemeinde_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q24:IsagWebServiceFaultDetails" xmlns:q24="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_UpdateSubjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSubjekt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_UpdateSubjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSubjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_UpdateSubjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q25:IsagWebServiceFaultDetails" xmlns:q25="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAdresse_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAdresse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAdresse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAdresseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAdresse_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q26:IsagWebServiceFaultDetails" xmlns:q26="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAdresse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdresse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAdresse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAdresseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAdresse_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q27:IsagWebServiceFaultDetails" xmlns:q27="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAdresse_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAdresse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAdresse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAdresseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAdresse_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q28:IsagWebServiceFaultDetails" xmlns:q28="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteBriefanrede_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteBriefanrede" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteBriefanrede_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteBriefanredeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteBriefanrede_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q29:IsagWebServiceFaultDetails" xmlns:q29="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaet_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAktivitaet" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAktivitaetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q30:IsagWebServiceFaultDetails" xmlns:q30="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetReferenz_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_AktivitaetReferenz" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetReferenz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_AktivitaetReferenzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetReferenz_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q31:IsagWebServiceFaultDetails" xmlns:q31="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetProjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAktivitaetProjekt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetProjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAktivitaetProjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetProjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q32:IsagWebServiceFaultDetails" xmlns:q32="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetKonversation_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_AktivitaetKonversation" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetKonversation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_AktivitaetKonversationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetKonversation_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q33:IsagWebServiceFaultDetails" xmlns:q33="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAktivitaet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAktivitaet" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAktivitaet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAktivitaetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q34:IsagWebServiceFaultDetails" xmlns:q34="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVSTO_Aktivitaet_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVSTO_Aktivitaet" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVSTO_Aktivitaet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVSTO_AktivitaetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVSTO_Aktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q35:IsagWebServiceFaultDetails" xmlns:q35="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAktivitaet_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAktivitaet" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAktivitaet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAktivitaetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q36:IsagWebServiceFaultDetails" xmlns:q36="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetBeteiligte_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAktivitaetBeteiligte" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetBeteiligte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAktivitaetBeteiligteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetBeteiligte_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q37:IsagWebServiceFaultDetails" xmlns:q37="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAktivitaetBeteiligte_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAktivitaetBeteiligte" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAktivitaetBeteiligte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAktivitaetBeteiligteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAktivitaetBeteiligte_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q38:IsagWebServiceFaultDetails" xmlns:q38="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAktivitaetBeteiligte_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAktivitaetBeteiligte" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAktivitaetBeteiligte_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAktivitaetBeteiligteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAktivitaetBeteiligte_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q39:IsagWebServiceFaultDetails" xmlns:q39="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteAktivitaetGenerieren_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteAktivitaetGenerieren" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteAktivitaetGenerieren_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteAktivitaetGenerierenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteAktivitaetGenerieren_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q40:IsagWebServiceFaultDetails" xmlns:q40="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetVorlage_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_AktivitaetVorlage" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetVorlage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_AktivitaetVorlageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetVorlage_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q41:IsagWebServiceFaultDetails" xmlns:q41="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetVorlage_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAktivitaetVorlage" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetVorlage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAktivitaetVorlageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetVorlage_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q42:IsagWebServiceFaultDetails" xmlns:q42="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteAnfragesteller_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteAnfragesteller" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteAnfragesteller_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteAnfragestellerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteAnfragesteller_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q43:IsagWebServiceFaultDetails" xmlns:q43="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAnlage_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAnlage" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAnlage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAnlageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAnlage_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q44:IsagWebServiceFaultDetails" xmlns:q44="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAnlage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnlage" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAnlage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAnlageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAnlage_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q45:IsagWebServiceFaultDetails" xmlns:q45="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAnlage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAnlage" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAnlage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAnlageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAnlage_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q46:IsagWebServiceFaultDetails" xmlns:q46="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAnlagetrezuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAnlagetrezuord" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAnlagetrezuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAnlagetrezuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAnlagetrezuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q47:IsagWebServiceFaultDetails" xmlns:q47="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteAnlagetrezuordWS_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteAnlagetrezuordWS" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteAnlagetrezuordWS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteAnlagetrezuordWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteAnlagetrezuordWS_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q48:IsagWebServiceFaultDetails" xmlns:q48="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAnlagetyp_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAnlagetyp" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAnlagetyp_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAnlagetypResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAnlagetyp_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q49:IsagWebServiceFaultDetails" xmlns:q49="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteDeleteAktivitaet_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteDeleteAktivitaet" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteDeleteAktivitaet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteDeleteAktivitaetResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteDeleteAktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q50:IsagWebServiceFaultDetails" xmlns:q50="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindDokumentreferenz_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindDokumentreferenz" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindDokumentreferenz_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindDokumentreferenzResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindDokumentreferenz_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q51:IsagWebServiceFaultDetails" xmlns:q51="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetEinmaladresse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinmaladresse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetEinmaladresse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEinmaladresseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetEinmaladresse_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q52:IsagWebServiceFaultDetails" xmlns:q52="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetGemeinde_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGemeinde" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetGemeinde_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGemeindeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetGemeinde_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q53:IsagWebServiceFaultDetails" xmlns:q53="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindGruppenzuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindGruppenzuord" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindGruppenzuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindGruppenzuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindGruppenzuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q54:IsagWebServiceFaultDetails" xmlns:q54="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetGruppenzuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetGruppenzuord" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetGruppenzuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetGruppenzuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetGruppenzuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q55:IsagWebServiceFaultDetails" xmlns:q55="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveGruppenzuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGruppenzuord" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveGruppenzuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveGruppenzuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveGruppenzuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q56:IsagWebServiceFaultDetails" xmlns:q56="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteInsertAktivitaetFristverlaengerung_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteInsertAktivitaetFristverlaengerung" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteInsertAktivitaetFristverlaengerung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteInsertAktivitaetFristverlaengerungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteInsertAktivitaetFristverlaengerung_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q57:IsagWebServiceFaultDetails" xmlns:q57="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindKommunikation_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindKommunikation" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindKommunikation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindKommunikationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindKommunikation_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q58:IsagWebServiceFaultDetails" xmlns:q58="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetKommunikation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetKommunikation" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetKommunikation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetKommunikationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetKommunikation_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q59:IsagWebServiceFaultDetails" xmlns:q59="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVSTO_Kommunikation_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVSTO_Kommunikation" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVSTO_Kommunikation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVSTO_KommunikationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVSTO_Kommunikation_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q60:IsagWebServiceFaultDetails" xmlns:q60="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveKommunikation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveKommunikation" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveKommunikation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveKommunikationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveKommunikation_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q61:IsagWebServiceFaultDetails" xmlns:q61="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveVSTO_Kommunikation_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVSTO_Kommunikation" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveVSTO_Kommunikation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVSTO_KommunikationResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveVSTO_Kommunikation_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q62:IsagWebServiceFaultDetails" xmlns:q62="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetNachricht_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAktivitaetNachricht" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetNachricht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAktivitaetNachrichtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindAktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q63:IsagWebServiceFaultDetails" xmlns:q63="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetNachricht_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_AktivitaetNachricht" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetNachricht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_AktivitaetNachrichtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_AktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q64:IsagWebServiceFaultDetails" xmlns:q64="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAktivitaetNachricht_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAktivitaetNachricht" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAktivitaetNachricht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAktivitaetNachrichtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetAktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q65:IsagWebServiceFaultDetails" xmlns:q65="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVSTO_AktivitaetNachricht_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVSTO_AktivitaetNachricht" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVSTO_AktivitaetNachricht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVSTO_AktivitaetNachrichtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVSTO_AktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q66:IsagWebServiceFaultDetails" xmlns:q66="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAktivitaetNachricht_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAktivitaetNachricht" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAktivitaetNachricht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAktivitaetNachrichtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveAktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q67:IsagWebServiceFaultDetails" xmlns:q67="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveVSTO_AktivitaetNachricht_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVSTO_AktivitaetNachricht" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveVSTO_AktivitaetNachricht_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVSTO_AktivitaetNachrichtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveVSTO_AktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q68:IsagWebServiceFaultDetails" xmlns:q68="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindOrgeinheit_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindOrgeinheit" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindOrgeinheit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindOrgeinheitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindOrgeinheit_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q69:IsagWebServiceFaultDetails" xmlns:q69="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_Orgeinheiten_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_Orgeinheiten" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_Orgeinheiten_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_OrgeinheitenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_Orgeinheiten_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q70:IsagWebServiceFaultDetails" xmlns:q70="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_Orgeinheit_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_Orgeinheit" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_Orgeinheit_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_OrgeinheitResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_Orgeinheit_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q71:IsagWebServiceFaultDetails" xmlns:q71="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindOrgeinheitLDAPZuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindOrgeinheitLDAPZuord" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindOrgeinheitLDAPZuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindOrgeinheitLDAPZuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindOrgeinheitLDAPZuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q72:IsagWebServiceFaultDetails" xmlns:q72="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindOrt_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindOrt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindOrt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindOrtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindOrt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q73:IsagWebServiceFaultDetails" xmlns:q73="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetOrt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetOrt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetOrtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetOrt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q74:IsagWebServiceFaultDetails" xmlns:q74="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveOrt_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveOrt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveOrtResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveOrt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q75:IsagWebServiceFaultDetails" xmlns:q75="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_ReferenzTypen_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_ReferenzTypen" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_ReferenzTypen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_ReferenzTypenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_ReferenzTypen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q76:IsagWebServiceFaultDetails" xmlns:q76="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_Referenzen_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_Referenzen" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_Referenzen_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_ReferenzenResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_Referenzen_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q77:IsagWebServiceFaultDetails" xmlns:q77="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_ReferenzName_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_ReferenzName" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_ReferenzName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_ReferenzNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_ReferenzName_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q78:IsagWebServiceFaultDetails" xmlns:q78="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_ReferenzEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_ReferenzEmail" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_ReferenzEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVSTO_ReferenzEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVSTO_ReferenzEmail_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q79:IsagWebServiceFaultDetails" xmlns:q79="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetParameter_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetParameter" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetParameter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetParameterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetParameter_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q80:IsagWebServiceFaultDetails" xmlns:q80="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektmanagement_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektmanagement" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektmanagement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektmanagementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektmanagement_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q81:IsagWebServiceFaultDetails" xmlns:q81="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjekt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q82:IsagWebServiceFaultDetails" xmlns:q82="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektParam_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektParam" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektParam_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektParamResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektParam_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q83:IsagWebServiceFaultDetails" xmlns:q83="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektParamRolle_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektParamRolle" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektParamRolle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektParamRolleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektParamRolle_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q84:IsagWebServiceFaultDetails" xmlns:q84="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektRolle_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektRolle" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektRolle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektRolleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektRolle_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q85:IsagWebServiceFaultDetails" xmlns:q85="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetProjektRolle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjektRolle" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetProjektRolle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProjektRolleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetProjektRolle_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q86:IsagWebServiceFaultDetails" xmlns:q86="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveProjektRolle_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProjektRolle" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveProjektRolle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProjektRolleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveProjektRolle_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q87:IsagWebServiceFaultDetails" xmlns:q87="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektRollezuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektRollezuord" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektRollezuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindProjektRollezuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindProjektRollezuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q88:IsagWebServiceFaultDetails" xmlns:q88="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteSessionIdentifier_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSessionIdentifier" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteSessionIdentifier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteSessionIdentifierResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteSessionIdentifier_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q89:IsagWebServiceFaultDetails" xmlns:q89="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindStandort_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindStandort" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindStandort_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindStandortResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindStandort_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q90:IsagWebServiceFaultDetails" xmlns:q90="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetStandort_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStandort" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetStandort_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStandortResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetStandort_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q91:IsagWebServiceFaultDetails" xmlns:q91="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindStrasse_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindStrasse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindStrasse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindStrasseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindStrasse_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q92:IsagWebServiceFaultDetails" xmlns:q92="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetStrasse_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStrasse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetStrasse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStrasseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetStrasse_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q93:IsagWebServiceFaultDetails" xmlns:q93="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSubjekt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSubjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q94:IsagWebServiceFaultDetails" xmlns:q94="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetSubjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubjekt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetSubjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetSubjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q95:IsagWebServiceFaultDetails" xmlns:q95="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveSubjekt_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSubjekt" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveSubjekt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSubjektResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveSubjekt_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q96:IsagWebServiceFaultDetails" xmlns:q96="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetSubjektAnschrift_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubjektAnschrift" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetSubjektAnschrift_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubjektAnschriftResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetSubjektAnschrift_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q97:IsagWebServiceFaultDetails" xmlns:q97="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteDublettenCheck_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteDublettenCheck" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteDublettenCheck_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteDublettenCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteDublettenCheck_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q98:IsagWebServiceFaultDetails" xmlns:q98="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjektKontaktperson_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSubjektKontaktperson" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjektKontaktperson_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSubjektKontaktpersonResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjektKontaktperson_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q99:IsagWebServiceFaultDetails" xmlns:q99="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjektRolle_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSubjektRolle" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjektRolle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSubjektRolleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjektRolle_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q100:IsagWebServiceFaultDetails" xmlns:q100="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjektzuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindSubjektzuord" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjektzuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindSubjektzuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindSubjektzuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q101:IsagWebServiceFaultDetails" xmlns:q101="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindUebergeordneteSubjektzuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindUebergeordneteSubjektzuord" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindUebergeordneteSubjektzuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindUebergeordneteSubjektzuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindUebergeordneteSubjektzuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q102:IsagWebServiceFaultDetails" xmlns:q102="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetSubjektzuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubjektzuord" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetSubjektzuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubjektzuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetSubjektzuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q103:IsagWebServiceFaultDetails" xmlns:q103="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveSubjektzuord_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSubjektzuord" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveSubjektzuord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSubjektzuordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveSubjektzuord_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q104:IsagWebServiceFaultDetails" xmlns:q104="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVersand_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVersand" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVersand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVersandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVersand_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q105:IsagWebServiceFaultDetails" xmlns:q105="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVerwendungrolle_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindVerwendungrolle" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVerwendungrolle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindVerwendungrolleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_FindVerwendungrolle_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q106:IsagWebServiceFaultDetails" xmlns:q106="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVerwendungrolle_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVerwendungrolle" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVerwendungrolle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVerwendungrolleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_GetVerwendungrolle_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q107:IsagWebServiceFaultDetails" xmlns:q107="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveVerwendungrolle_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVerwendungrolle" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveVerwendungrolle_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveVerwendungrolleResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_SaveVerwendungrolle_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q108:IsagWebServiceFaultDetails" xmlns:q108="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_EinwohnerDetail_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_EinwohnerDetail" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_EinwohnerDetail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteWIC_EinwohnerDetailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBasisService_ExecuteWIC_EinwohnerDetail_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q109:IsagWebServiceFaultDetails" xmlns:q109="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:portType name="IBasisService">
+    <wsdl:operation name="ExecuteWIC_CheckAvailableDetailData">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_CheckAvailableDetailData" message="tns:IBasisService_ExecuteWIC_CheckAvailableDetailData_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_CheckAvailableDetailDataResponse" message="tns:IBasisService_ExecuteWIC_CheckAvailableDetailData_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_CheckAvailableDetailDataIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_CheckAvailableDetailData_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_PartnerName">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_PartnerName" message="tns:IBasisService_ExecuteWIC_PartnerName_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_PartnerNameResponse" message="tns:IBasisService_ExecuteWIC_PartnerName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_PartnerNameIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_PartnerName_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailKinder">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailKinder" message="tns:IBasisService_ExecuteWIC_DetailKinder_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailKinderResponse" message="tns:IBasisService_ExecuteWIC_DetailKinder_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailKinderIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailKinder_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailBeziehungen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailBeziehungen" message="tns:IBasisService_ExecuteWIC_DetailBeziehungen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailBeziehungenResponse" message="tns:IBasisService_ExecuteWIC_DetailBeziehungen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailBeziehungenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailBeziehungen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailHaushalt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailHaushalt" message="tns:IBasisService_ExecuteWIC_DetailHaushalt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailHaushaltResponse" message="tns:IBasisService_ExecuteWIC_DetailHaushalt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailHaushaltIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailHaushalt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailAdressen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailAdressen" message="tns:IBasisService_ExecuteWIC_DetailAdressen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailAdressenResponse" message="tns:IBasisService_ExecuteWIC_DetailAdressen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailAdressenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailAdressen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailMeldeverhaeltnisse">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailMeldeverhaeltnisse" message="tns:IBasisService_ExecuteWIC_DetailMeldeverhaeltnisse_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailMeldeverhaeltnisseResponse" message="tns:IBasisService_ExecuteWIC_DetailMeldeverhaeltnisse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailMeldeverhaeltnisseIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailMeldeverhaeltnisse_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailZivilstaende">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZivilstaende" message="tns:IBasisService_ExecuteWIC_DetailZivilstaende_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZivilstaendeResponse" message="tns:IBasisService_ExecuteWIC_DetailZivilstaende_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZivilstaendeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailZivilstaende_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailArbeitgeber">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailArbeitgeber" message="tns:IBasisService_ExecuteWIC_DetailArbeitgeber_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailArbeitgeberResponse" message="tns:IBasisService_ExecuteWIC_DetailArbeitgeber_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailArbeitgeberIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailArbeitgeber_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailMassnahmen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailMassnahmen" message="tns:IBasisService_ExecuteWIC_DetailMassnahmen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailMassnahmenResponse" message="tns:IBasisService_ExecuteWIC_DetailMassnahmen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailMassnahmenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailMassnahmen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailZusaetzeSubjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZusaetzeSubjekt" message="tns:IBasisService_ExecuteWIC_DetailZusaetzeSubjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZusaetzeSubjektResponse" message="tns:IBasisService_ExecuteWIC_DetailZusaetzeSubjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZusaetzeSubjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailZusaetzeSubjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailZusaetzeEinwohner">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZusaetzeEinwohner" message="tns:IBasisService_ExecuteWIC_DetailZusaetzeEinwohner_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZusaetzeEinwohnerResponse" message="tns:IBasisService_ExecuteWIC_DetailZusaetzeEinwohner_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZusaetzeEinwohnerIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailZusaetzeEinwohner_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailKommunikationen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailKommunikationen" message="tns:IBasisService_ExecuteWIC_DetailKommunikationen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailKommunikationenResponse" message="tns:IBasisService_ExecuteWIC_DetailKommunikationen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailKommunikationenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailKommunikationen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailAktivitaeten">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailAktivitaeten" message="tns:IBasisService_ExecuteWIC_DetailAktivitaeten_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailAktivitaetenResponse" message="tns:IBasisService_ExecuteWIC_DetailAktivitaeten_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailAktivitaetenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailAktivitaeten_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailHunde">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailHunde" message="tns:IBasisService_ExecuteWIC_DetailHunde_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailHundeResponse" message="tns:IBasisService_ExecuteWIC_DetailHunde_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailHundeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailHunde_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailLinks">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailLinks" message="tns:IBasisService_ExecuteWIC_DetailLinks_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailLinksResponse" message="tns:IBasisService_ExecuteWIC_DetailLinks_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailLinksIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_DetailLinks_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_Berechtigung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Berechtigung" message="tns:IBasisService_ExecuteWIC_Berechtigung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_BerechtigungResponse" message="tns:IBasisService_ExecuteWIC_Berechtigung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_BerechtigungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_Berechtigung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_Orgeinheit">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Orgeinheit" message="tns:IBasisService_ExecuteWIC_Orgeinheit_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_OrgeinheitResponse" message="tns:IBasisService_ExecuteWIC_Orgeinheit_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_OrgeinheitIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_Orgeinheit_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_OrgeinheitEinstellungen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_OrgeinheitEinstellungen" message="tns:IBasisService_ExecuteWIC_OrgeinheitEinstellungen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_OrgeinheitEinstellungenResponse" message="tns:IBasisService_ExecuteWIC_OrgeinheitEinstellungen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_OrgeinheitEinstellungenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_OrgeinheitEinstellungen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_SubjektRechte">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_SubjektRechte" message="tns:IBasisService_ExecuteWIC_SubjektRechte_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_SubjektRechteResponse" message="tns:IBasisService_ExecuteWIC_SubjektRechte_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_SubjektRechteIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_SubjektRechte_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_EinwohnerSuche">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_EinwohnerSuche" message="tns:IBasisService_ExecuteWIC_EinwohnerSuche_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_EinwohnerSucheResponse" message="tns:IBasisService_ExecuteWIC_EinwohnerSuche_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_EinwohnerSucheIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_EinwohnerSuche_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_Protokoll_Suche">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Protokoll_Suche" message="tns:IBasisService_ExecuteWIC_Protokoll_Suche_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Protokoll_SucheResponse" message="tns:IBasisService_ExecuteWIC_Protokoll_Suche_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Protokoll_SucheIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_Protokoll_Suche_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_Protokoll_Detail">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Protokoll_Detail" message="tns:IBasisService_ExecuteWIC_Protokoll_Detail_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Protokoll_DetailResponse" message="tns:IBasisService_ExecuteWIC_Protokoll_Detail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Protokoll_DetailIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_Protokoll_Detail_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_Polgemeinde">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Polgemeinde" message="tns:IBasisService_ExecuteWIC_Polgemeinde_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_PolgemeindeResponse" message="tns:IBasisService_ExecuteWIC_Polgemeinde_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_PolgemeindeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_Polgemeinde_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/UpdateSubjekt" message="tns:IBasisService_UpdateSubjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/UpdateSubjektResponse" message="tns:IBasisService_UpdateSubjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/UpdateSubjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_UpdateSubjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAdresse">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAdresse" message="tns:IBasisService_FindAdresse_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAdresseResponse" message="tns:IBasisService_FindAdresse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAdresseIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindAdresse_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAdresse">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAdresse" message="tns:IBasisService_GetAdresse_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAdresseResponse" message="tns:IBasisService_GetAdresse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAdresseIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetAdresse_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAdresse">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAdresse" message="tns:IBasisService_SaveAdresse_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAdresseResponse" message="tns:IBasisService_SaveAdresse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAdresseIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveAdresse_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteBriefanrede">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteBriefanrede" message="tns:IBasisService_ExecuteBriefanrede_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteBriefanredeResponse" message="tns:IBasisService_ExecuteBriefanrede_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteBriefanredeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteBriefanrede_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAktivitaet">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaet" message="tns:IBasisService_FindAktivitaet_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetResponse" message="tns:IBasisService_FindAktivitaet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindAktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_AktivitaetReferenz">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetReferenz" message="tns:IBasisService_FindVSTO_AktivitaetReferenz_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetReferenzResponse" message="tns:IBasisService_FindVSTO_AktivitaetReferenz_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetReferenzIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVSTO_AktivitaetReferenz_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAktivitaetProjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetProjekt" message="tns:IBasisService_FindAktivitaetProjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetProjektResponse" message="tns:IBasisService_FindAktivitaetProjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetProjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindAktivitaetProjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_AktivitaetKonversation">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetKonversation" message="tns:IBasisService_FindVSTO_AktivitaetKonversation_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetKonversationResponse" message="tns:IBasisService_FindVSTO_AktivitaetKonversation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetKonversationIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVSTO_AktivitaetKonversation_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAktivitaet">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAktivitaet" message="tns:IBasisService_GetAktivitaet_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAktivitaetResponse" message="tns:IBasisService_GetAktivitaet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAktivitaetIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetAktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVSTO_Aktivitaet">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVSTO_Aktivitaet" message="tns:IBasisService_GetVSTO_Aktivitaet_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVSTO_AktivitaetResponse" message="tns:IBasisService_GetVSTO_Aktivitaet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVSTO_AktivitaetIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetVSTO_Aktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAktivitaet">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAktivitaet" message="tns:IBasisService_SaveAktivitaet_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAktivitaetResponse" message="tns:IBasisService_SaveAktivitaet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAktivitaetIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveAktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAktivitaetBeteiligte">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetBeteiligte" message="tns:IBasisService_FindAktivitaetBeteiligte_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetBeteiligteResponse" message="tns:IBasisService_FindAktivitaetBeteiligte_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetBeteiligteIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindAktivitaetBeteiligte_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAktivitaetBeteiligte">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAktivitaetBeteiligte" message="tns:IBasisService_GetAktivitaetBeteiligte_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAktivitaetBeteiligteResponse" message="tns:IBasisService_GetAktivitaetBeteiligte_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAktivitaetBeteiligteIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetAktivitaetBeteiligte_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAktivitaetBeteiligte">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAktivitaetBeteiligte" message="tns:IBasisService_SaveAktivitaetBeteiligte_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAktivitaetBeteiligteResponse" message="tns:IBasisService_SaveAktivitaetBeteiligte_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAktivitaetBeteiligteIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveAktivitaetBeteiligte_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAktivitaetGenerieren">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteAktivitaetGenerieren" message="tns:IBasisService_ExecuteAktivitaetGenerieren_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteAktivitaetGenerierenResponse" message="tns:IBasisService_ExecuteAktivitaetGenerieren_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteAktivitaetGenerierenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteAktivitaetGenerieren_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_AktivitaetVorlage">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetVorlage" message="tns:IBasisService_FindVSTO_AktivitaetVorlage_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetVorlageResponse" message="tns:IBasisService_FindVSTO_AktivitaetVorlage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetVorlageIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVSTO_AktivitaetVorlage_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAktivitaetVorlage">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetVorlage" message="tns:IBasisService_FindAktivitaetVorlage_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetVorlageResponse" message="tns:IBasisService_FindAktivitaetVorlage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetVorlageIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindAktivitaetVorlage_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnfragesteller">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteAnfragesteller" message="tns:IBasisService_ExecuteAnfragesteller_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteAnfragestellerResponse" message="tns:IBasisService_ExecuteAnfragesteller_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteAnfragestellerIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteAnfragesteller_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAnlage">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAnlage" message="tns:IBasisService_FindAnlage_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAnlageResponse" message="tns:IBasisService_FindAnlage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAnlageIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindAnlage_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAnlage">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAnlage" message="tns:IBasisService_GetAnlage_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAnlageResponse" message="tns:IBasisService_GetAnlage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAnlageIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetAnlage_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAnlage">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAnlage" message="tns:IBasisService_SaveAnlage_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAnlageResponse" message="tns:IBasisService_SaveAnlage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAnlageIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveAnlage_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAnlagetrezuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAnlagetrezuord" message="tns:IBasisService_FindAnlagetrezuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAnlagetrezuordResponse" message="tns:IBasisService_FindAnlagetrezuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAnlagetrezuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindAnlagetrezuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnlagetrezuordWS">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteAnlagetrezuordWS" message="tns:IBasisService_ExecuteAnlagetrezuordWS_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteAnlagetrezuordWSResponse" message="tns:IBasisService_ExecuteAnlagetrezuordWS_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteAnlagetrezuordWSIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteAnlagetrezuordWS_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAnlagetyp">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAnlagetyp" message="tns:IBasisService_FindAnlagetyp_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAnlagetypResponse" message="tns:IBasisService_FindAnlagetyp_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAnlagetypIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindAnlagetyp_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDeleteAktivitaet">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteDeleteAktivitaet" message="tns:IBasisService_ExecuteDeleteAktivitaet_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteDeleteAktivitaetResponse" message="tns:IBasisService_ExecuteDeleteAktivitaet_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteDeleteAktivitaetIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteDeleteAktivitaet_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindDokumentreferenz">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindDokumentreferenz" message="tns:IBasisService_FindDokumentreferenz_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindDokumentreferenzResponse" message="tns:IBasisService_FindDokumentreferenz_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindDokumentreferenzIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindDokumentreferenz_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEinmaladresse">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetEinmaladresse" message="tns:IBasisService_GetEinmaladresse_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetEinmaladresseResponse" message="tns:IBasisService_GetEinmaladresse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetEinmaladresseIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetEinmaladresse_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGemeinde">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetGemeinde" message="tns:IBasisService_GetGemeinde_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetGemeindeResponse" message="tns:IBasisService_GetGemeinde_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetGemeindeIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetGemeinde_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindGruppenzuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindGruppenzuord" message="tns:IBasisService_FindGruppenzuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindGruppenzuordResponse" message="tns:IBasisService_FindGruppenzuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindGruppenzuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindGruppenzuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGruppenzuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetGruppenzuord" message="tns:IBasisService_GetGruppenzuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetGruppenzuordResponse" message="tns:IBasisService_GetGruppenzuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetGruppenzuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetGruppenzuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveGruppenzuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveGruppenzuord" message="tns:IBasisService_SaveGruppenzuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveGruppenzuordResponse" message="tns:IBasisService_SaveGruppenzuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveGruppenzuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveGruppenzuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteInsertAktivitaetFristverlaengerung">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteInsertAktivitaetFristverlaengerung" message="tns:IBasisService_ExecuteInsertAktivitaetFristverlaengerung_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteInsertAktivitaetFristverlaengerungResponse" message="tns:IBasisService_ExecuteInsertAktivitaetFristverlaengerung_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteInsertAktivitaetFristverlaengerungIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteInsertAktivitaetFristverlaengerung_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindKommunikation">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindKommunikation" message="tns:IBasisService_FindKommunikation_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindKommunikationResponse" message="tns:IBasisService_FindKommunikation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindKommunikationIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindKommunikation_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetKommunikation">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetKommunikation" message="tns:IBasisService_GetKommunikation_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetKommunikationResponse" message="tns:IBasisService_GetKommunikation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetKommunikationIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetKommunikation_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVSTO_Kommunikation">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVSTO_Kommunikation" message="tns:IBasisService_GetVSTO_Kommunikation_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVSTO_KommunikationResponse" message="tns:IBasisService_GetVSTO_Kommunikation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVSTO_KommunikationIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetVSTO_Kommunikation_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveKommunikation">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveKommunikation" message="tns:IBasisService_SaveKommunikation_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveKommunikationResponse" message="tns:IBasisService_SaveKommunikation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveKommunikationIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveKommunikation_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVSTO_Kommunikation">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveVSTO_Kommunikation" message="tns:IBasisService_SaveVSTO_Kommunikation_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveVSTO_KommunikationResponse" message="tns:IBasisService_SaveVSTO_Kommunikation_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveVSTO_KommunikationIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveVSTO_Kommunikation_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAktivitaetNachricht">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetNachricht" message="tns:IBasisService_FindAktivitaetNachricht_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetNachrichtResponse" message="tns:IBasisService_FindAktivitaetNachricht_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindAktivitaetNachrichtIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindAktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_AktivitaetNachricht">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetNachricht" message="tns:IBasisService_FindVSTO_AktivitaetNachricht_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetNachrichtResponse" message="tns:IBasisService_FindVSTO_AktivitaetNachricht_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetNachrichtIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVSTO_AktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAktivitaetNachricht">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAktivitaetNachricht" message="tns:IBasisService_GetAktivitaetNachricht_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAktivitaetNachrichtResponse" message="tns:IBasisService_GetAktivitaetNachricht_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetAktivitaetNachrichtIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetAktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVSTO_AktivitaetNachricht">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVSTO_AktivitaetNachricht" message="tns:IBasisService_GetVSTO_AktivitaetNachricht_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVSTO_AktivitaetNachrichtResponse" message="tns:IBasisService_GetVSTO_AktivitaetNachricht_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVSTO_AktivitaetNachrichtIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetVSTO_AktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAktivitaetNachricht">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAktivitaetNachricht" message="tns:IBasisService_SaveAktivitaetNachricht_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAktivitaetNachrichtResponse" message="tns:IBasisService_SaveAktivitaetNachricht_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveAktivitaetNachrichtIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveAktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVSTO_AktivitaetNachricht">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveVSTO_AktivitaetNachricht" message="tns:IBasisService_SaveVSTO_AktivitaetNachricht_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveVSTO_AktivitaetNachrichtResponse" message="tns:IBasisService_SaveVSTO_AktivitaetNachricht_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveVSTO_AktivitaetNachrichtIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveVSTO_AktivitaetNachricht_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindOrgeinheit">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindOrgeinheit" message="tns:IBasisService_FindOrgeinheit_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindOrgeinheitResponse" message="tns:IBasisService_FindOrgeinheit_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindOrgeinheitIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindOrgeinheit_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_Orgeinheiten">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_Orgeinheiten" message="tns:IBasisService_FindVSTO_Orgeinheiten_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_OrgeinheitenResponse" message="tns:IBasisService_FindVSTO_Orgeinheiten_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_OrgeinheitenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVSTO_Orgeinheiten_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_Orgeinheit">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_Orgeinheit" message="tns:IBasisService_FindVSTO_Orgeinheit_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_OrgeinheitResponse" message="tns:IBasisService_FindVSTO_Orgeinheit_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_OrgeinheitIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVSTO_Orgeinheit_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindOrgeinheitLDAPZuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindOrgeinheitLDAPZuord" message="tns:IBasisService_FindOrgeinheitLDAPZuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindOrgeinheitLDAPZuordResponse" message="tns:IBasisService_FindOrgeinheitLDAPZuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindOrgeinheitLDAPZuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindOrgeinheitLDAPZuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindOrt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindOrt" message="tns:IBasisService_FindOrt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindOrtResponse" message="tns:IBasisService_FindOrt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindOrtIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindOrt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetOrt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetOrt" message="tns:IBasisService_GetOrt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetOrtResponse" message="tns:IBasisService_GetOrt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetOrtIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetOrt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveOrt" message="tns:IBasisService_SaveOrt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveOrtResponse" message="tns:IBasisService_SaveOrt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveOrtIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveOrt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_ReferenzTypen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzTypen" message="tns:IBasisService_FindVSTO_ReferenzTypen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzTypenResponse" message="tns:IBasisService_FindVSTO_ReferenzTypen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzTypenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVSTO_ReferenzTypen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_Referenzen">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_Referenzen" message="tns:IBasisService_FindVSTO_Referenzen_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzenResponse" message="tns:IBasisService_FindVSTO_Referenzen_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzenIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVSTO_Referenzen_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_ReferenzName">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzName" message="tns:IBasisService_FindVSTO_ReferenzName_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzNameResponse" message="tns:IBasisService_FindVSTO_ReferenzName_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzNameIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVSTO_ReferenzName_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_ReferenzEmail">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzEmail" message="tns:IBasisService_FindVSTO_ReferenzEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzEmailResponse" message="tns:IBasisService_FindVSTO_ReferenzEmail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzEmailIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVSTO_ReferenzEmail_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParameter">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetParameter" message="tns:IBasisService_GetParameter_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetParameterResponse" message="tns:IBasisService_GetParameter_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetParameterIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetParameter_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProjektmanagement">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektmanagement" message="tns:IBasisService_FindProjektmanagement_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektmanagementResponse" message="tns:IBasisService_FindProjektmanagement_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektmanagementIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindProjektmanagement_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjekt" message="tns:IBasisService_FindProjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektResponse" message="tns:IBasisService_FindProjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindProjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProjektParam">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektParam" message="tns:IBasisService_FindProjektParam_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektParamResponse" message="tns:IBasisService_FindProjektParam_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektParamIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindProjektParam_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProjektParamRolle">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektParamRolle" message="tns:IBasisService_FindProjektParamRolle_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektParamRolleResponse" message="tns:IBasisService_FindProjektParamRolle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektParamRolleIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindProjektParamRolle_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProjektRolle">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektRolle" message="tns:IBasisService_FindProjektRolle_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektRolleResponse" message="tns:IBasisService_FindProjektRolle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektRolleIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindProjektRolle_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProjektRolle">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetProjektRolle" message="tns:IBasisService_GetProjektRolle_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetProjektRolleResponse" message="tns:IBasisService_GetProjektRolle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetProjektRolleIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetProjektRolle_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjektRolle">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveProjektRolle" message="tns:IBasisService_SaveProjektRolle_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveProjektRolleResponse" message="tns:IBasisService_SaveProjektRolle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveProjektRolleIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveProjektRolle_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindProjektRollezuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektRollezuord" message="tns:IBasisService_FindProjektRollezuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektRollezuordResponse" message="tns:IBasisService_FindProjektRollezuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindProjektRollezuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindProjektRollezuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSessionIdentifier">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteSessionIdentifier" message="tns:IBasisService_ExecuteSessionIdentifier_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteSessionIdentifierResponse" message="tns:IBasisService_ExecuteSessionIdentifier_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteSessionIdentifierIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteSessionIdentifier_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindStandort">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindStandort" message="tns:IBasisService_FindStandort_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindStandortResponse" message="tns:IBasisService_FindStandort_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindStandortIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindStandort_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStandort">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetStandort" message="tns:IBasisService_GetStandort_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetStandortResponse" message="tns:IBasisService_GetStandort_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetStandortIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetStandort_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindStrasse">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindStrasse" message="tns:IBasisService_FindStrasse_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindStrasseResponse" message="tns:IBasisService_FindStrasse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindStrasseIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindStrasse_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStrasse">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetStrasse" message="tns:IBasisService_GetStrasse_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetStrasseResponse" message="tns:IBasisService_GetStrasse_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetStrasseIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetStrasse_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSubjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjekt" message="tns:IBasisService_FindSubjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektResponse" message="tns:IBasisService_FindSubjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindSubjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetSubjekt" message="tns:IBasisService_GetSubjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetSubjektResponse" message="tns:IBasisService_GetSubjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetSubjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetSubjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubjekt">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveSubjekt" message="tns:IBasisService_SaveSubjekt_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveSubjektResponse" message="tns:IBasisService_SaveSubjekt_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveSubjektIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveSubjekt_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjektAnschrift">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetSubjektAnschrift" message="tns:IBasisService_GetSubjektAnschrift_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetSubjektAnschriftResponse" message="tns:IBasisService_GetSubjektAnschrift_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetSubjektAnschriftIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetSubjektAnschrift_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDublettenCheck">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteDublettenCheck" message="tns:IBasisService_ExecuteDublettenCheck_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteDublettenCheckResponse" message="tns:IBasisService_ExecuteDublettenCheck_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteDublettenCheckIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteDublettenCheck_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSubjektKontaktperson">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektKontaktperson" message="tns:IBasisService_FindSubjektKontaktperson_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektKontaktpersonResponse" message="tns:IBasisService_FindSubjektKontaktperson_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektKontaktpersonIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindSubjektKontaktperson_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSubjektRolle">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektRolle" message="tns:IBasisService_FindSubjektRolle_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektRolleResponse" message="tns:IBasisService_FindSubjektRolle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektRolleIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindSubjektRolle_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindSubjektzuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektzuord" message="tns:IBasisService_FindSubjektzuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektzuordResponse" message="tns:IBasisService_FindSubjektzuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindSubjektzuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindSubjektzuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindUebergeordneteSubjektzuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindUebergeordneteSubjektzuord" message="tns:IBasisService_FindUebergeordneteSubjektzuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindUebergeordneteSubjektzuordResponse" message="tns:IBasisService_FindUebergeordneteSubjektzuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindUebergeordneteSubjektzuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindUebergeordneteSubjektzuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjektzuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetSubjektzuord" message="tns:IBasisService_GetSubjektzuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetSubjektzuordResponse" message="tns:IBasisService_GetSubjektzuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetSubjektzuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetSubjektzuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubjektzuord">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveSubjektzuord" message="tns:IBasisService_SaveSubjektzuord_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveSubjektzuordResponse" message="tns:IBasisService_SaveSubjektzuord_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveSubjektzuordIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveSubjektzuord_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVersand">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVersand" message="tns:IBasisService_FindVersand_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVersandResponse" message="tns:IBasisService_FindVersand_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVersandIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVersand_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindVerwendungrolle">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVerwendungrolle" message="tns:IBasisService_FindVerwendungrolle_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVerwendungrolleResponse" message="tns:IBasisService_FindVerwendungrolle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/FindVerwendungrolleIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_FindVerwendungrolle_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVerwendungrolle">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVerwendungrolle" message="tns:IBasisService_GetVerwendungrolle_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVerwendungrolleResponse" message="tns:IBasisService_GetVerwendungrolle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/GetVerwendungrolleIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_GetVerwendungrolle_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveVerwendungrolle">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveVerwendungrolle" message="tns:IBasisService_SaveVerwendungrolle_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveVerwendungrolleResponse" message="tns:IBasisService_SaveVerwendungrolle_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/SaveVerwendungrolleIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_SaveVerwendungrolle_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_EinwohnerDetail">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_EinwohnerDetail" message="tns:IBasisService_ExecuteWIC_EinwohnerDetail_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_EinwohnerDetailResponse" message="tns:IBasisService_ExecuteWIC_EinwohnerDetail_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_EinwohnerDetailIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:IBasisService_ExecuteWIC_EinwohnerDetail_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IBasisService" type="tns:IBasisService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IBasisService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteWIC_CheckAvailableDetailData">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_CheckAvailableDetailData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_PartnerName">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_PartnerName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailKinder">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailKinder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailBeziehungen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailBeziehungen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailHaushalt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailHaushalt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailAdressen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailAdressen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailMeldeverhaeltnisse">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailMeldeverhaeltnisse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailZivilstaende">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZivilstaende" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailArbeitgeber">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailArbeitgeber" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailMassnahmen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailMassnahmen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailZusaetzeSubjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZusaetzeSubjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailZusaetzeEinwohner">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailZusaetzeEinwohner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailKommunikationen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailKommunikationen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailAktivitaeten">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailAktivitaeten" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailHunde">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailHunde" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_DetailLinks">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_DetailLinks" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_Berechtigung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Berechtigung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_Orgeinheit">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Orgeinheit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_OrgeinheitEinstellungen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_OrgeinheitEinstellungen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_SubjektRechte">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_SubjektRechte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_EinwohnerSuche">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_EinwohnerSuche" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_Protokoll_Suche">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Protokoll_Suche" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_Protokoll_Detail">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Protokoll_Detail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_Polgemeinde">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_Polgemeinde" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSubjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/UpdateSubjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAdresse">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindAdresse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAdresse">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetAdresse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAdresse">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveAdresse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteBriefanrede">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteBriefanrede" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAktivitaet">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindAktivitaet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_AktivitaetReferenz">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetReferenz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAktivitaetProjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindAktivitaetProjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_AktivitaetKonversation">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetKonversation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAktivitaet">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetAktivitaet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVSTO_Aktivitaet">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetVSTO_Aktivitaet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAktivitaet">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveAktivitaet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAktivitaetBeteiligte">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindAktivitaetBeteiligte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAktivitaetBeteiligte">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetAktivitaetBeteiligte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAktivitaetBeteiligte">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveAktivitaetBeteiligte" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAktivitaetGenerieren">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteAktivitaetGenerieren" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_AktivitaetVorlage">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetVorlage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAktivitaetVorlage">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindAktivitaetVorlage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnfragesteller">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteAnfragesteller" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAnlage">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindAnlage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAnlage">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetAnlage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAnlage">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveAnlage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAnlagetrezuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindAnlagetrezuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteAnlagetrezuordWS">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteAnlagetrezuordWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAnlagetyp">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindAnlagetyp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDeleteAktivitaet">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteDeleteAktivitaet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindDokumentreferenz">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindDokumentreferenz" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetEinmaladresse">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetEinmaladresse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGemeinde">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetGemeinde" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindGruppenzuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindGruppenzuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetGruppenzuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetGruppenzuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveGruppenzuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveGruppenzuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteInsertAktivitaetFristverlaengerung">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteInsertAktivitaetFristverlaengerung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindKommunikation">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindKommunikation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetKommunikation">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetKommunikation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVSTO_Kommunikation">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetVSTO_Kommunikation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveKommunikation">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveKommunikation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVSTO_Kommunikation">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveVSTO_Kommunikation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindAktivitaetNachricht">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindAktivitaetNachricht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_AktivitaetNachricht">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVSTO_AktivitaetNachricht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetAktivitaetNachricht">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetAktivitaetNachricht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVSTO_AktivitaetNachricht">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetVSTO_AktivitaetNachricht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAktivitaetNachricht">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveAktivitaetNachricht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVSTO_AktivitaetNachricht">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveVSTO_AktivitaetNachricht" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindOrgeinheit">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindOrgeinheit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_Orgeinheiten">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVSTO_Orgeinheiten" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_Orgeinheit">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVSTO_Orgeinheit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindOrgeinheitLDAPZuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindOrgeinheitLDAPZuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindOrt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindOrt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetOrt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetOrt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveOrt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveOrt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_ReferenzTypen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzTypen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_Referenzen">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVSTO_Referenzen" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_ReferenzName">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVSTO_ReferenzEmail">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVSTO_ReferenzEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetParameter">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetParameter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindProjektmanagement">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindProjektmanagement" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindProjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindProjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindProjektParam">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindProjektParam" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindProjektParamRolle">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindProjektParamRolle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindProjektRolle">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindProjektRolle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetProjektRolle">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetProjektRolle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProjektRolle">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveProjektRolle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindProjektRollezuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindProjektRollezuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteSessionIdentifier">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteSessionIdentifier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindStandort">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindStandort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStandort">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetStandort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindStrasse">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindStrasse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetStrasse">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetStrasse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindSubjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindSubjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetSubjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubjekt">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveSubjekt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjektAnschrift">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetSubjektAnschrift" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteDublettenCheck">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteDublettenCheck" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindSubjektKontaktperson">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindSubjektKontaktperson" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindSubjektRolle">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindSubjektRolle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindSubjektzuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindSubjektzuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindUebergeordneteSubjektzuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindUebergeordneteSubjektzuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubjektzuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetSubjektzuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubjektzuord">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveSubjektzuord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVersand">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVersand" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="FindVerwendungrolle">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/FindVerwendungrolle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetVerwendungrolle">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/GetVerwendungrolle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="SaveVerwendungrolle">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/SaveVerwendungrolle" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteWIC_EinwohnerDetail">
+      <soap:operation soapAction="http://innosolv.ch/webservices/IBasisService/ExecuteWIC_EinwohnerDetail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BasisService">
+    <wsdl:port name="BasicHttpBinding_IBasisService" binding="tns:BasicHttpBinding_IBasisService">
+      <soap:address location="http://localhost:8092/BasisService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

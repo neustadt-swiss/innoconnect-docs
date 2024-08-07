@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="SchnittstelleService" targetNamespace="http://innosolv.ch/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://innosolv.ch/webservices/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsp:Policy wsu:Id="BasicHttpBinding_ISchnittstelleService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <http:BasicAuthentication xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://innosolv.ch/webservices/Imports">
+      <xsd:import schemaLocation="SchnittstelleService_xsd_1.xsd" namespace="http://innosolv.ch/webservices/" />
+      <xsd:import schemaLocation="SchnittstelleService_xsd_2.xsd" namespace="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+      <xsd:import schemaLocation="SchnittstelleService_xsd_3.xsd" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ISchnittstelleService_ExecuteCustomerIdentificationCriterias_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteCustomerIdentificationCriterias" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteCustomerIdentificationCriterias_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteCustomerIdentificationCriteriasResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteCustomerIdentificationCriterias_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q1:IsagWebServiceFaultDetails" xmlns:q1="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteCustomerIdentification_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteCustomerIdentification" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteCustomerIdentification_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteCustomerIdentificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteCustomerIdentification_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q2:IsagWebServiceFaultDetails" xmlns:q2="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueOpenEntries_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueOpenEntries" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueOpenEntries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueOpenEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueOpenEntries_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q3:IsagWebServiceFaultDetails" xmlns:q3="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueOldestEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueOldestEntry" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueOldestEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueOldestEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueOldestEntry_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q4:IsagWebServiceFaultDetails" xmlns:q4="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueInsertError_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueInsertError" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueInsertError_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueInsertErrorResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueInsertError_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q5:IsagWebServiceFaultDetails" xmlns:q5="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueDeleteEntry_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueDeleteEntry" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueDeleteEntry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueDeleteEntryResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueDeleteEntry_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q6:IsagWebServiceFaultDetails" xmlns:q6="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueInsertUsage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueInsertUsage" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueInsertUsage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueInsertUsageResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueInsertUsage_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q7:IsagWebServiceFaultDetails" xmlns:q7="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueDeleteSpecialEntries_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueDeleteSpecialEntries" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueDeleteSpecialEntries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueDeleteSpecialEntriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueDeleteSpecialEntries_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q8:IsagWebServiceFaultDetails" xmlns:q8="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueOpenEntriesList_InputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueOpenEntriesList" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueOpenEntriesList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteExternQueueOpenEntriesListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISchnittstelleService_ExecuteExternQueueOpenEntriesList_IsagWebServiceFaultDetailsFault_FaultMessage">
+    <wsdl:part name="detail" element="q9:IsagWebServiceFaultDetails" xmlns:q9="http://schemas.datacontract.org/2004/07/CH.InnoSolv.WcfServices.General" />
+  </wsdl:message>
+  <wsdl:portType name="ISchnittstelleService">
+    <wsdl:operation name="ExecuteCustomerIdentificationCriterias">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteCustomerIdentificationCriterias" message="tns:ISchnittstelleService_ExecuteCustomerIdentificationCriterias_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteCustomerIdentificationCriteriasResponse" message="tns:ISchnittstelleService_ExecuteCustomerIdentificationCriterias_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteCustomerIdentificationCriteriasIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ISchnittstelleService_ExecuteCustomerIdentificationCriterias_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteCustomerIdentification">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteCustomerIdentification" message="tns:ISchnittstelleService_ExecuteCustomerIdentification_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteCustomerIdentificationResponse" message="tns:ISchnittstelleService_ExecuteCustomerIdentification_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteCustomerIdentificationIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ISchnittstelleService_ExecuteCustomerIdentification_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueOpenEntries">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOpenEntries" message="tns:ISchnittstelleService_ExecuteExternQueueOpenEntries_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOpenEntriesResponse" message="tns:ISchnittstelleService_ExecuteExternQueueOpenEntries_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOpenEntriesIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ISchnittstelleService_ExecuteExternQueueOpenEntries_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueOldestEntry">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOldestEntry" message="tns:ISchnittstelleService_ExecuteExternQueueOldestEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOldestEntryResponse" message="tns:ISchnittstelleService_ExecuteExternQueueOldestEntry_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOldestEntryIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ISchnittstelleService_ExecuteExternQueueOldestEntry_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueInsertError">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueInsertError" message="tns:ISchnittstelleService_ExecuteExternQueueInsertError_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueInsertErrorResponse" message="tns:ISchnittstelleService_ExecuteExternQueueInsertError_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueInsertErrorIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ISchnittstelleService_ExecuteExternQueueInsertError_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueDeleteEntry">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueDeleteEntry" message="tns:ISchnittstelleService_ExecuteExternQueueDeleteEntry_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueDeleteEntryResponse" message="tns:ISchnittstelleService_ExecuteExternQueueDeleteEntry_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueDeleteEntryIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ISchnittstelleService_ExecuteExternQueueDeleteEntry_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueInsertUsage">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueInsertUsage" message="tns:ISchnittstelleService_ExecuteExternQueueInsertUsage_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueInsertUsageResponse" message="tns:ISchnittstelleService_ExecuteExternQueueInsertUsage_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueInsertUsageIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ISchnittstelleService_ExecuteExternQueueInsertUsage_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueDeleteSpecialEntries">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueDeleteSpecialEntries" message="tns:ISchnittstelleService_ExecuteExternQueueDeleteSpecialEntries_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueDeleteSpecialEntriesResponse" message="tns:ISchnittstelleService_ExecuteExternQueueDeleteSpecialEntries_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueDeleteSpecialEntriesIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ISchnittstelleService_ExecuteExternQueueDeleteSpecialEntries_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueOpenEntriesList">
+      <wsdl:input wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOpenEntriesList" message="tns:ISchnittstelleService_ExecuteExternQueueOpenEntriesList_InputMessage" />
+      <wsdl:output wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOpenEntriesListResponse" message="tns:ISchnittstelleService_ExecuteExternQueueOpenEntriesList_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOpenEntriesListIsagWebServiceFaultDetailsFault" name="IsagWebServiceFaultDetailsFault" message="tns:ISchnittstelleService_ExecuteExternQueueOpenEntriesList_IsagWebServiceFaultDetailsFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ISchnittstelleService" type="tns:ISchnittstelleService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ISchnittstelleService_policy" />
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ExecuteCustomerIdentificationCriterias">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteCustomerIdentificationCriterias" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteCustomerIdentification">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteCustomerIdentification" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueOpenEntries">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOpenEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueOldestEntry">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOldestEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueInsertError">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueInsertError" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueDeleteEntry">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueDeleteEntry" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueInsertUsage">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueInsertUsage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueDeleteSpecialEntries">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueDeleteSpecialEntries" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteExternQueueOpenEntriesList">
+      <soap:operation soapAction="http://innosolv.ch/webservices/ISchnittstelleService/ExecuteExternQueueOpenEntriesList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="IsagWebServiceFaultDetailsFault">
+        <soap:fault name="IsagWebServiceFaultDetailsFault" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SchnittstelleService">
+    <wsdl:port name="BasicHttpBinding_ISchnittstelleService" binding="tns:BasicHttpBinding_ISchnittstelleService">
+      <soap:address location="http://localhost:8092/SchnittstelleService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

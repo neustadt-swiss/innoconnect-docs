@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions name="PersonIdentificationService" targetNamespace="http://www.ech.ch/xmlns/eCH-0194/1/webservice" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://www.ech.ch/xmlns/eCH-0194/1/webservice" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.ech.ch/xmlns/eCH-0194/1/webservice/Imports">
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_1.xsd" namespace="http://www.ech.ch/xmlns/eCH-0194/1/webservice" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_2.xsd" namespace="http://www.ech.ch/xmlns/eCH-0058/5" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_3.xsd" namespace="http://www.ech.ch/xmlns/eCH-0194/1" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_4.xsd" namespace="http://www.ech.ch/xmlns/eCH-0044/4" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_5.xsd" namespace="http://www.ech.ch/xmlns/eCH-0007/5" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_6.xsd" namespace="http://www.ech.ch/xmlns/eCH-0011/8" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_7.xsd" namespace="http://www.ech.ch/xmlns/eCH-0006/2" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_8.xsd" namespace="http://www.ech.ch/xmlns/eCH-0185/1" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_9.xsd" namespace="http://www.ech.ch/xmlns/eCH-0010/5" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_10.xsd" namespace="http://www.ech.ch/xmlns/eCH-0021/7" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_11.xsd" namespace="http://www.ech.ch/xmlns/eCH-0008/3" />
+      <xsd:import schemaLocation="PersonIdentificationService_xsd_12.xsd" namespace="http://www.ech.ch/xmlns/eCH-0135/1" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="searchPersonIdentificationRequest">
+    <wsdl:part name="searchPersonIdentification" element="tns:searchPersonIdentification" />
+  </wsdl:message>
+  <wsdl:message name="searchPersonIdentificationResponse1">
+    <wsdl:part name="searchPersonIdentificationResponse" element="tns:searchPersonIdentificationResponse" />
+  </wsdl:message>
+  <wsdl:message name="PersonIdentification_searchPersonIdentification_Exception_FaultMessage">
+    <wsdl:part name="detail" element="tns:Exception" />
+  </wsdl:message>
+  <wsdl:portType name="PersonIdentification">
+    <wsdl:operation name="searchPersonIdentification">
+      <wsdl:input wsaw:Action="" name="searchPersonIdentificationRequest" message="tns:searchPersonIdentificationRequest" />
+      <wsdl:output wsaw:Action="PersonIdentificationReplyAction" name="searchPersonIdentificationResponse1" message="tns:searchPersonIdentificationResponse1" />
+      <wsdl:fault wsaw:Action="" name="Exception" message="tns:PersonIdentification_searchPersonIdentification_Exception_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_PersonIdentification" type="tns:PersonIdentification">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="searchPersonIdentification">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="searchPersonIdentificationRequest">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="searchPersonIdentificationResponse1">
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="Exception">
+        <soap:fault name="Exception" use="literal" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PersonIdentificationService">
+    <wsdl:port name="BasicHttpBinding_PersonIdentification" binding="tns:BasicHttpBinding_PersonIdentification">
+      <soap:address location="http://localhost:8092/PersonIdentificationService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

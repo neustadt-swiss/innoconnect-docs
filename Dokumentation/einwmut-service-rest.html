@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>innoconnect / EinwMut</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/site.css">
+    <link rel="stylesheet" href="assets/font-interstate/interstate.css">
+    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="assets/img/favicon-192.png" type="image/png" sizes="192x192">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark navbar-toggleable-sm innosolv-header-bg text-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="innosolv-logo" href="index.html"><img src="assets/img/innosolv-logo.png" height="22" /></a>
+            </div>
+        </nav>
+    </header>
+    <main class="container-fluid pb-4">
+        <h1><a href="index.html">innoconnect</a> / EinwMut</h1>
+        <div class="row mt-4">
+            <div class="col-lg-auto">
+                <div class="card">
+                    <div class="card-body pt-3">
+                        <h2>Übersicht</h2>
+                        <ul class="list-inline">
+                        <li><a href="#endpoints-mutationpos">Mutationpos</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg pt-4 pt-lg-0">
+                <div class="card mb-4">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div>
+                                <h2 id="endpoints-mutationpos">Mutationpos</h2>
+                                <p>Das Objekt Mutationpos unterstützt die folgenden Endpunkte.</p>
+                                <table class="table">
+                                    <thead class="thead-light">
+                                        <th>Endpunkt</th>
+                                        <th>Beschreibung</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <a href="#search-mutationpos">
+                                                    <span class="bg-primary rounded-lg text-white px-3 py-1">GET</span> <span class="text-monospace">einwmut/mutationpos</span>
+                                                </a>
+                                            </td>
+                                            <td>Suchen nach Mutationpos Objekten.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </li>
+                        <li class="list-group-item">
+                            <div>
+                                <h4 id="search-mutationpos"><span class="bg-primary rounded-lg text-white px-3 py-1">GET</span> <span class="text-monospace">einwmut/mutationpos</span></h4>
+                                <p class="text-secondary">Suchen nach Mutationpos Objekten.</p>
+                                <div class="row">
+                                <div class="col">
+                                    <h5>Parameters</h5>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Default</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name text-parameter-name-required">ID_Mutationpos</span>
+                                                    <span class="text-parameter-indicator-required">*required</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>ID_Mutationpos.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">Ereignis</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>Ereignis.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">Ereignisdatum</span>
+                                                    <br />
+                                                    DateTime
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>Ereignisdatum. </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">EreignisdatumOperator</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>EreignisdatumOperator.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">ID_Mutation</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>ID_Mutation.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">ID_Subjekt</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>ID_Subjekt. </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">LetzteMutation</span>
+                                                    <br />
+                                                    DateTime
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>LetzteMutation. </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">LetzteMutationOperator</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>LetzteMutationOperator.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">Meldeart</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>Meldeart.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">Meldedatum</span>
+                                                    <br />
+                                                    DateTime
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>Meldedatum. </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">MeldedatumOperator</span>
+                                                    <br />
+                                                    String
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>MeldedatumOperator.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-parameter-name">Storniert</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-parameter-source">(query)</span>
+                                                </td>
+                                                <td></td>
+                                                <td>Storniert.</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="col">
+                                    <h5>Response</h5>
+                                    <p class="text-secondary">Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.</p>
+                                    <table class="table">
+                                        <thead class="thead-light">
+                                            <th>Name</th>
+                                            <th>Herkunft</th>
+                                            <th>Beschreibung</th>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">ID_Mutation</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">ID_Mutationpos</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">ID_Subjekt</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">Ereignis</span>
+                                                    <br />
+                                                    String
+                                                </td>
+                                                <td>Mutationpos.Ereignis</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Ereignisdatum</span>
+                                                    <br />
+                                                    DateTime
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Meldedatum</span>
+                                                    <br />
+                                                    DateTime
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">Notiz</span>
+                                                    <br />
+                                                    String
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">Meldeart</span>
+                                                    <br />
+                                                    String
+                                                </td>
+                                                <td>Mutation.Meldeart</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">Storniert</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td>Wurde die Mutation storniert, wird eine 1 zurück geliefert.</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name text-response-name-not-null">Ereignis_Cd</span>
+                                                    <br />
+                                                    Int32
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">Meldeart_Cd</span>
+                                                    <br />
+                                                    Int32
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <span class="text-response-name">LetzteMutation</span>
+                                                    <br />
+                                                    DateTime
+                                                    <br />
+                                                    <span class="text-response-indicator-null">nullable</span>
+                                                </td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="border-top footer text-muted">
+        <div class="container-fluid">
+            &copy; 2023 <a href="https://www.innosolv.ch/" title="innosolv AG">innosolv AG</a>, <span class="small text-info">generated on 21.03.2023</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+

@@ -1,0 +1,517 @@
+﻿<!doctype html>
+<html>
+<head>
+
+
+<title>EinwMutService</title>
+<link href="Documentationstyle.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<a href="index.html">Zum Index</a>
+<h1>EinwMutService</h1>
+<div class="index">
+<ul>
+        <li><a href="#FindMutationpos">FindMutationpos</a></li>
+    </ul>
+</div>
+<div class="details">
+        <h2 id="FindMutationpos">FindMutationpos</h2>
+        <h3>Input</h3> 
+        <table style="visibility:visible">
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Default
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                                            <tr>
+                    <td>
+                        ID_Mutation
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Wird nur der Parameter ID_Mutation übergeben, werden alle Mutationpositionen dieser Mutation ermittelt
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ID_Mutationpos
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Wird der Parameter ID_Mutationpos übergeben, werden alle anderen Parameter ignoriert. Es wird genau eine Mutationposition ermittelt.
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Ereignis
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Mutationpos.Ereignis
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Ereignisdatum
+                    </td>
+                    <td>
+                        DateTime
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        EreignisdatumOperator
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Es können die Operatoren ">", "<", ">=", "<=" und "=" (default) verwendet werden.
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Meldeart
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Mutation.Meldeart
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Meldedatum
+                    </td>
+                    <td>
+                        DateTime
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        MeldedatumOperator
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Es können die Operatoren ">", "<", ">=", "<=" und "=" (default) verwendet werden.
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        LetzteMutation
+                    </td>
+                    <td>
+                        DateTime
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        LetzteMutationOperator
+                    </td>
+                    <td>
+                        String
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Es können die Operatoren ">", "<", ">=", "<=" und "=" (default) verwendet werden.
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        Storniert
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Wurde die Mutation storniert, wird eine 1 zurück geliefert.
+                    </td>
+                    
+                </tr>
+                                
+                                            <tr>
+                    <td>
+                        ID_Subjekt
+                    </td>
+                    <td>
+                        Int32
+                    </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                    
+                </tr>
+                                
+                        </tbody>
+        </table>
+        <h3>Output</h3>
+                <div class="listinfo">(Das Ergebnis ist eine Liste von Elementen, die der folgenden Struktur entsprechen.)</div>        
+        		
+        <table style="visibility:visible" >
+            <thead>
+                <tr>
+                <td>
+                Name
+                </td>
+                <td>
+                Datentyp
+                </td>
+                <td>
+                Optional
+                </td>
+                <td>
+                Herkunft
+                </td>
+                <td>
+                Dokumentation
+                </td>
+                </tr>
+            </thead>
+            <tbody>
+                            <tr>
+                    <td>
+                        ID_Mutation
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Mutationpos
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        ID_Subjekt
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Ereignis
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Mutationpos.Ereignis
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Ereignisdatum
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Meldedatum
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Notiz
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Meldeart
+                    </td>
+                    <td>
+                        
+                        String                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        Mutation.Meldeart
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Storniert
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        Wurde die Mutation storniert, wird eine 1 zurück geliefert.
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Ereignis_Cd
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    -
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        Meldeart_Cd
+                    </td>
+                    <td>
+                        
+                        Int32                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                            <tr>
+                    <td>
+                        LetzteMutation
+                    </td>
+                    <td>
+                        
+                        DateTime                            
+                                            </td>
+                    <td>
+                                                    optional
+                                            </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+                        </tbody>
+        </table>                
+    </div> 
+<br />
+(c) innosolv AG, Erstelldatum: 21.03.2023  
+</body>
+</html>

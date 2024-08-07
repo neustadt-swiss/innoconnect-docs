@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.ech.ch/xmlns/eCH-0194/1/webservice" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ech.ch/xmlns/eCH-0194/1/webservice">
+  <xs:import schemaLocation="PersonIdentificationService_xsd_2.xsd" namespace="http://www.ech.ch/xmlns/eCH-0058/5" />
+  <xs:import schemaLocation="PersonIdentificationService_xsd_3.xsd" namespace="http://www.ech.ch/xmlns/eCH-0194/1" />
+  <xs:element name="searchPersonIdentification" type="tns:searchPersonIdentification" />
+  <xs:complexType name="searchPersonIdentification">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="header" type="q1:headerType" xmlns:q1="http://www.ech.ch/xmlns/eCH-0058/5" />
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="personMoveRequest" type="q2:personMoveRequest" xmlns:q2="http://www.ech.ch/xmlns/eCH-0194/1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="searchPersonIdentificationResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" form="unqualified" name="return" type="q3:personMoveResponse" xmlns:q3="http://www.ech.ch/xmlns/eCH-0194/1" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="searchPersonIdentificationResponse" type="tns:searchPersonIdentificationResponse" />
+  <xs:element name="Exception" type="tns:Exception" />
+</xs:schema>

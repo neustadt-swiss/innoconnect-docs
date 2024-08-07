@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema elementFormDefault="qualified" targetNamespace="http://www.ech.ch/xmlns/eCH-0135/1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.ech.ch/xmlns/eCH-0135/1">
+  <xs:import schemaLocation="PersonIdentificationService_xsd_5.xsd" namespace="http://www.ech.ch/xmlns/eCH-0007/5" />
+  <xs:complexType name="placeOfOriginType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="1" name="validFrom" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="validTo" type="xs:date" />
+      <xs:element minOccurs="0" maxOccurs="1" name="placeOfOriginId" type="xs:nonNegativeInteger" />
+      <xs:element minOccurs="0" maxOccurs="1" name="historyMunicipalityId" type="xs:int" />
+      <xs:element minOccurs="0" maxOccurs="1" name="placeOfOriginName" type="xs:string" />
+      <xs:element minOccurs="1" maxOccurs="1" name="cantonAbbreviation" type="q1:cantonAbbreviationType" xmlns:q1="http://www.ech.ch/xmlns/eCH-0007/5" />
+      <xs:element minOccurs="0" maxOccurs="1" name="successorId" type="xs:nonNegativeInteger" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
