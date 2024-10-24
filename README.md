@@ -7,3 +7,5 @@ It contains the following
   - SOAP Services
   - REST Services
 - WSDL
+
+[Doc](https://neustadt-swiss.github.io/innoconnect-docs/Dokumentation)
